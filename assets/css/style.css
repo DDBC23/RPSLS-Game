@@ -25,7 +25,7 @@ nav {
 
 h1 {
     position: static;
-    margin-top: 5rem;
+    margin-top: 4rem;
     font-size: 3rem;
     text-decoration: underline;
     text-shadow: 3px 3px #3a3a3a;
@@ -48,7 +48,7 @@ h1 {
     text-shadow: 3px 3px #3a3a3a;
     background-color: #845EC2;
     border: 0.2rem solid #3a3a3a;
-    margin: 0.25rem 0;
+    margin: 0.1125rem 0;
 }
 
 #header-buttons button:hover {
@@ -70,7 +70,56 @@ h1 {
 #game-area {
     height: 70vh;
     width: 90vw;
-    margin: auto;
+    margin: 0 auto;
     border: 1rem double #3a3a3a;
-    z-index: 5;
+}
+
+#rpsls-selection {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    color: #edebeb;
+    font-size: 2rem;
+    text-shadow: 3px 3px #3a3a3a;
+    text-align: center;
+}
+
+.rpsls-selector img {
+    height: 9rem;
+    width: 9rem;
+}
+
+.selections {
+    margin: 1rem 3rem 0 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    text-shadow: 3px 3px #3a3a3a;
+    text-align: center;
+}
+
+.choice-container {
+    height: 14rem;
+    width: 14rem;
+    border-radius: 50%;
+    background-color: #edebeb;
+    border: 0.5rem solid #3a3a3a;
+}
+
+.choice-container img {
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    background-color: #edebeb;
+}
+
+#game-countdown {
+    margin: 0 auto;
+    padding-top: 3rem;
+    font-size: 8rem;
+    text-shadow: 0.3125rem 0.3125rem #3a3a3a;
+    text-align: center;
+    background-color: transparent;
 }
