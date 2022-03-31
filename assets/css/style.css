@@ -7,6 +7,44 @@
 }
 
 body {
-    font-family: "Permanent Marker", sans-serif;
+    font-family: "Permanent marker", sans-serif;
     color: #edebeb;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    height: 6.25rem;
+    margin: 0 auto;
+    background-color: #225762;
+    border-style: ridge;
+    border-color: #589595;
+}
+
+#header-buttons {
+    padding-top: 1.875rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: center;
+}
+
+#header-buttons button {
+    height: 3.125rem;
+    font-family: "Permanent marker";
+    font-size: 2rem;
+    color: #edebeb;
+    background-color: #845EC2;
+    padding: 0 1rem 0.5rem 1rem;
+    border: 0.2rem solid #3a3a3a;
+}
+
+#header-buttons li {
+    display: inline-block;
+}
+
+#modes-dropdown {
+    display: none;
 }
