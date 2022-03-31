@@ -68,7 +68,7 @@ h1 {
 }
 
 #game-area {
-    height: 70vh;
+    height: 72vh;
     width: 90vw;
     margin: 0 auto;
     border: 1rem double #3a3a3a;
@@ -136,7 +136,7 @@ h1 {
 }
 
 .lives-boxes {
-    margin: 1rem 10rem 0 0;
+    margin: 1rem 11rem 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,4 +149,6 @@ h1 {
     width: 3rem;
     border: 0.5rem solid #3a3a3a;
     background-color: white;
+    font-size: 2rem;
+    color: #3a3a3a;
 }
