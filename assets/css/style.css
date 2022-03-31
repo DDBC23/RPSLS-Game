@@ -30,7 +30,6 @@ h1 {
     text-decoration: underline;
     text-shadow: 3px 3px #3a3a3a;
     text-align: center;
-    z-index: 0;
 }
 
 #header-buttons {
@@ -56,10 +55,6 @@ h1 {
     background-color: #589595;
 }
 
-#header-buttons button:focus {
-    background-color: #589595;
-}
-
 #header-buttons li {
     display: block;
 }
@@ -70,4 +65,12 @@ h1 {
 
 #rules-drop-content {
     display: none;
+}
+
+#game-area {
+    height: 70vh;
+    width: 90vw;
+    margin: auto;
+    border: 1rem double #3a3a3a;
+    z-index: 5;
 }

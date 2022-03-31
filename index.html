@@ -16,7 +16,7 @@
             <ul id="header-buttons">
                 <li>
                     <button id="modes-button"> Game Modes </button>
-                    <div id="game-drop-content">
+                    <div class="dropdown-content" id="game-drop-content">
                         <div>
                             <button id="rpsls-mode">RPSLS</button>
                         </div>
@@ -27,9 +27,10 @@
                 </li>
                 <li>
                     <button id="rules"> Rules </button>
-                    <div id="rules-drop-content">
+                    <div class="dropdown-content" id="rules-drop-content">
                         <div>
                             <button id="rpsls-rules">RPSLS</button>
+                            <div id="rpsls-rules-window"></div>
                         </div>
                         <div>
                             <button id="rps-rules">RPS</button>
@@ -42,14 +43,12 @@
             </ul>
         </nav>
     </header>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <!-- rock paper scissors lizard spock game -->
-    <section>
+    <h1 id="game-name">Rock Paper Scissors Lizard Spock</h1>
+    <section id="game-area">
+        <!-- rock paper scissors lizard spock game -->
         <div>
         </div>
-    </section>
-    <!-- rock paper scissors game -->
-    <section>
+        <!-- rock paper scissors game -->
         <div>
         </div>
     </section>

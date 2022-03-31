@@ -1,6 +1,7 @@
 document.getElementById("modes-button").addEventListener("click", gameDrop);
 document.getElementById("rules").addEventListener("click", rulesDrop);
 
+/**either hides or shows game modes dropdown */
 function gameDrop (event) {
     let gameModeList = document.getElementById("game-drop-content");
 
@@ -11,6 +12,7 @@ function gameDrop (event) {
     }
 }
 
+/**either hides or shows rules dropdown */
 function rulesDrop (event) {
     let rulesList = document.getElementById("rules-drop-content");
 
