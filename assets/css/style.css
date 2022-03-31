@@ -9,6 +9,7 @@
 body {
     font-family: "Permanent marker", sans-serif;
     color: #edebeb;
+    background-image: linear-gradient(to right, #845EC2, #225762, #589595);
 }
 
 ul {
@@ -18,9 +19,17 @@ ul {
 nav {
     height: 6.25rem;
     margin: 0 auto;
-    background-color: #225762;
-    border-style: ridge;
-    border-color: #589595;
+    background-color: transparent;
+    z-index: 1;
+}
+
+h1 {
+    position: static;
+    margin-top: 4rem;
+    font-size: 3rem;
+    text-decoration: underline;
+    text-shadow: 3px 3px #3a3a3a;
+    text-align: center;
 }
 
 #header-buttons {
@@ -28,23 +37,25 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-content: stretch;
-    align-items: center;
 }
 
 #header-buttons button {
     height: 3.125rem;
+    width: 20rem;
     font-family: "Permanent marker";
     font-size: 2rem;
     color: #edebeb;
+    text-shadow: 3px 3px #3a3a3a;
     background-color: #845EC2;
     padding: 0 1rem 0.5rem 1rem;
     border: 0.2rem solid #3a3a3a;
 }
 
-#header-buttons li {
-    display: inline-block;
+#header-buttons button:hover, #header-buttons button:focus {
+    background-color: #589595;
 }
 
-#modes-dropdown {
-    display: none;
+#header-buttons li {
+    display: block;
 }
+
