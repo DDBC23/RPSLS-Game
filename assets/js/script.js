@@ -1,5 +1,4 @@
 document.getElementById("modes-button").addEventListener("click", gameDrop);
-document.getElementById("rules").addEventListener("click", rulesDrop);
 
 /**either hides or shows game modes dropdown */
 function gameDrop (event) {
@@ -12,6 +11,8 @@ function gameDrop (event) {
     }
 }
 
+document.getElementById("rules").addEventListener("click", rulesDrop);
+
 /**either hides or shows rules dropdown */
 function rulesDrop (event) {
     let rulesList = document.getElementById("rules-drop-content");
@@ -20,5 +21,18 @@ function rulesDrop (event) {
         rulesList.style.display ="none";
     } else {
         rulesList.style.display ="block";
+    }
+}
+
+document.getElementById("rpsls-rules").addEventListener("click", rpslsRules);
+
+/**shows or closes rpsls rules window */
+function rpslsRules(event) {
+    let rpslsRulesWindow = document.getElementById("rpsls-rules-window");
+
+    if (rpslsRulesWindow.style.display ==="block") {
+        rpslsRulesWindow.style.display ="none";
+    } else {
+        rpslsRulesWindow.style.display ="block";
     }
 }

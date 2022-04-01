@@ -30,10 +30,10 @@
                     <div class="dropdown-content" id="rules-drop-content">
                         <div>
                             <button id="rpsls-rules">RPSLS</button>
-                            <div id="rpsls-rules-window"></div>
                         </div>
                         <div>
                             <button id="rps-rules">RPS</button>
+                            <div id="rps-rules-window"></div>
                         </div>
                     </div>
                 </li>
@@ -41,6 +41,41 @@
                     <button id="high-scores"> High Scores </button>
                 </li>
             </ul>
+            <div id="rpsls-rules-window">
+                <img src="/assets/images/rpsls-rules.png" alt="rock paper scissors lizard spock rules diagram">
+                <table id="rpsls-table">
+                    <tr>
+                        <th>Selection</th>
+                        <th>Wins</th>
+                        <th>Loses</th>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>Scissors<br> Lizard</td>
+                        <td>Paper<br> Spock</td>
+                    </tr>
+                    <tr>
+                        <td>Paper</td>
+                        <td>Rock<br> Spock</td>
+                        <td>Scissors<br> Lizard</td>
+                    </tr>
+                    <tr>
+                        <td>Scissors</td>
+                        <td>Paper<br> Lizard</td>
+                        <td>Rock<br> Spock</td>
+                    </tr>
+                    <tr>
+                        <td>Lizard</td>
+                        <td>Paper<br> Spock</td>
+                        <td>Rock<br> Scissors</td>
+                    </tr>
+                    <tr>
+                        <td>Spock</td>
+                        <td>Rock<br> Scissors</td>
+                        <td>Paper<br> Lizard</td>
+                    </tr>
+                </table>
+            </div>
         </nav>
     </header>
     <h1 id="game-name">Rock Paper Scissors Lizard Spock</h1>
@@ -71,8 +106,8 @@
             </div>
             <div class="selections">
                 <div>
-                    <div id="player-selection" class="choice-container">
-                        <img src="/assets/images/question-mark.jpg" alt="#">
+                    <div class="choice-container">
+                        <img id="player-selection" src="/assets/images/question-mark.jpg" alt="#">
                         <figcaption>Make your choice!</figcaption>
                     </div>
                 </div>

@@ -72,6 +72,8 @@ h1 {
     width: 90vw;
     margin: 0 auto;
     border: 1rem double #3a3a3a;
+    background-color: #589595;
+    z-index: 3;
 }
 
 #rpsls-selection {
@@ -151,4 +153,44 @@ h1 {
     background-color: white;
     font-size: 2rem;
     color: #3a3a3a;
+}
+
+#rpsls-rules-window {
+    display: none;
+    position: fixed;
+    right: 10vw;
+    top: 25vh;
+    height: 42.5rem;
+    width: 75vw;
+    background-color: #589595;
+    border: 1rem #3a3a3a;
+    border-style:ridge;
+    z-index: 8;
+}
+
+#rpsls-rules-window img {
+    float: left;
+    margin: 3rem 0 0 3rem;
+    height: 35rem;
+    width: 35rem;
+}
+
+#rpsls-table {
+    margin-top: 5rem;
+    text-align: center;
+    font-family: "Permanent marker";
+    font-size: 1.5rem;
+    text-shadow: 3px 3px #3a3a3a;
+}
+
+#rpsls-table td {
+    width: 10rem;
+    border: 0.3125rem solid #3a3a3a;
+    background-color: #845EC2;
+}
+
+#rpsls-table th {
+    font-size: 2rem;
+    background-color: #225762;
+    border: 0.3125rem solid #3a3a3a;
 }
