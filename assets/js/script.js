@@ -30,10 +30,10 @@ document.getElementById("rpsls-rules").addEventListener("click", rpslsRules);
 function rpslsRules(event) {
     let rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
-    if (rpslsRulesWindow.style.display === "block") {
+    if (rpslsRulesWindow.style.display === "flex") {
         rpslsRulesWindow.style.display = "none";
     } else {
-        rpslsRulesWindow.style.display = "block";
+        rpslsRulesWindow.style.display = "flex";
     }
 }
 
