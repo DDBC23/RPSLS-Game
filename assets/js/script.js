@@ -1,26 +1,26 @@
 document.getElementById("modes-button").addEventListener("click", gameDrop);
 
 /**either hides or shows game modes dropdown */
-function gameDrop (event) {
+function gameDrop(event) {
     let gameModeList = document.getElementById("game-drop-content");
 
-    if(gameModeList.style.display ==="block") {
-        gameModeList.style.display ="none";
+    if (gameModeList.style.display === "block") {
+        gameModeList.style.display = "none";
     } else {
-        gameModeList.style.display ="block";
+        gameModeList.style.display = "block";
     }
 }
 
 document.getElementById("rules").addEventListener("click", rulesDrop);
 
 /**either hides or shows rules dropdown */
-function rulesDrop (event) {
+function rulesDrop(event) {
     let rulesList = document.getElementById("rules-drop-content");
 
-    if(rulesList.style.display ==="block") {
-        rulesList.style.display ="none";
+    if (rulesList.style.display === "block") {
+        rulesList.style.display = "none";
     } else {
-        rulesList.style.display ="block";
+        rulesList.style.display = "block";
     }
 }
 
@@ -30,9 +30,34 @@ document.getElementById("rpsls-rules").addEventListener("click", rpslsRules);
 function rpslsRules(event) {
     let rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
-    if (rpslsRulesWindow.style.display ==="block") {
-        rpslsRulesWindow.style.display ="none";
+    if (rpslsRulesWindow.style.display === "block") {
+        rpslsRulesWindow.style.display = "none";
     } else {
-        rpslsRulesWindow.style.display ="block";
+        rpslsRulesWindow.style.display = "block";
     }
+}
+
+let playerChoices = document.getElementsByClassName("rpsls-selector");
+
+for (const playerChoice of playerChoices) {
+    playerChoice.addEventListener("click", function playerSelection() {
+        let playerSelected = document.getElementById("player-selection");
+
+        if (this.getAttribute("data-type") === "rock-selector") {
+            playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
+                <figcaption>Ready to rock?</figcaption>`;
+        } else if (this.getAttribute("data-type") === "paper-selector") {
+            playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
+                <figcaption>Ready to wrap this up?</figcaption>`;
+        } else if (this.getAttribute("data-type") === "scissors-selector") {
+            playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
+                <figcaption>Will you make the cut?</figcaption>`;
+        } else if (this.getAttribute("data-type") === "lizard-selector") {
+            playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
+                <figcaption>Ready to gecko-ing?</figcaption>`;
+        } else if (this.getAttribute("data-type") === "spock-selector") {
+            playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
+                <figcaption>Ready to Trek them out?</figcaption>`;
+        }
+    })
 }
