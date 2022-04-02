@@ -11,6 +11,16 @@ function gameDrop(event) {
     }
 }
 
+window.addEventListener("click", function(event) {
+    let dropdownContent = document.getElementsByClassName("dropdown-content");
+
+    if (event.target.classList.contains("menu-button") === false) {
+        for (dropdown of dropdownContent) {
+            dropdown.style.display = "none";
+        }
+    }
+})
+
 document.getElementById("rules").addEventListener("click", rulesDrop);
 
 /**either hides or shows rules dropdown */

@@ -58,8 +58,13 @@ h1 {
     display: block;
 }
 
+.dropdown-content {
+    display: block;
+}
+
 #game-drop-content {
     display: none;
+    position: absolute;
 }
 
 #rules-drop-content {
