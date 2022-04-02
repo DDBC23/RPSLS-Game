@@ -9,7 +9,7 @@
 body {
     font-family: "Permanent marker", sans-serif;
     color: #edebeb;
-    background-image: linear-gradient(to right, #845EC2, #225762, #589595);
+    background-image: linear-gradient(to right, #845EC2, #589595, #225762);
 }
 
 ul {
@@ -41,7 +41,7 @@ h1 {
 #header-buttons button {
     height: 3.5rem;
     width: 20rem;
-    font-family: "Permanent marker";
+    font-family: "Permanent marker", sans-serif;
     font-size: 2rem;
     color: #edebeb;
     text-shadow: 3px 3px #3a3a3a;
@@ -51,7 +51,7 @@ h1 {
 }
 
 #header-buttons button:hover {
-    background-color: #589595;
+    background-color: #225762;
 }
 
 #header-buttons li {
@@ -177,7 +177,7 @@ h1 {
 #rpsls-table {
     margin-top: 5rem;
     text-align: center;
-    font-family: "Permanent marker";
+    font-family: "Permanent marker", sans-serif;
     font-size: 1.5rem;
     text-shadow: 3px 3px #3a3a3a;
 }
@@ -195,17 +195,18 @@ h1 {
 }
 
 #player-confirm {
+    display: block;
     height: 3.5rem;
     width: 15rem;
-    font-family: "Permanent marker";
+    font-family: "Permanent marker", sans-serif;
     font-size: 1.5rem;
     color: #edebeb;
     text-shadow: 3px 3px #3a3a3a;
-    background-color: #3a3a3a;
+    background-color: #845EC2;
     border: 0.3125rem solid #3a3a3a;
-    margin: 0.125rem 0;
 }
 
 #player-confirm:hover {
-    background-color: #845EC2;
+    background-color: #225762;
+    border: 0.3125rem solid #3a3a3a;
 }

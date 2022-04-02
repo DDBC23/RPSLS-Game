@@ -39,25 +39,31 @@ function rpslsRules(event) {
 
 let playerChoices = document.getElementsByClassName("rpsls-selector");
 
+/**Changes player choice to selected option and creates confirm button */
 for (const playerChoice of playerChoices) {
     playerChoice.addEventListener("click", function playerSelection() {
         let playerSelected = document.getElementById("player-selection");
 
         if (this.getAttribute("data-type") === "rock-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
-                <figcaption>Ready to rock?</figcaption>`;
+                <figcaption>Ready to rock?</figcaption>
+                <button id="player-confirm">Confirm choice</button>`;
         } else if (this.getAttribute("data-type") === "paper-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
-                <figcaption>Ready to wrap this up?</figcaption>`;
+                <figcaption>Ready to wrap this up?</figcaption>
+                <button id="player-confirm">Confirm choice</button>`;
         } else if (this.getAttribute("data-type") === "scissors-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
-                <figcaption>Will you make the cut?</figcaption>`;
+                <figcaption>Will you make the cut?</figcaption>
+                <button id="player-confirm">Confirm choice</button>`;
         } else if (this.getAttribute("data-type") === "lizard-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
-                <figcaption>Ready to gecko-ing?</figcaption>`;
+                <figcaption>Ready to gecko-ing?</figcaption>
+                <button id="player-confirm">Confirm choice</button>`;
         } else if (this.getAttribute("data-type") === "spock-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
-                <figcaption>Ready to Trek them out?</figcaption>`;
+                <figcaption>Ready to Trek them out?</figcaption>
+                <button id="player-confirm">Confirm choice</button>`;
         }
     })
 }
