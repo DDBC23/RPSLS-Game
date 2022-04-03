@@ -76,7 +76,7 @@ h1 {
     width: 90vw;
     margin: 0 auto;
     border: 1rem double #3a3a3a;
-    background-color: #589595;
+    background-color: transparent;
     z-index: 1;
 }
 
