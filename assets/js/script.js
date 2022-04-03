@@ -107,16 +107,115 @@ function roundStart() {
 
 function countDown() {
     let counter = document.getElementById("game-countdown").getElementsByTagName("p")[0];
-    
-        for (i = 4; i > 0;) {
-            if ([i] > 1) {
-                console.log([i] - 1);
-                counter.innerText = [i] - 1;
-                i--;
-            } else if ([i] >= 1) {
-                console.log("Go!");
-                counter.innerText = "Go!";
-                i--;
-            }
+
+    for (i = 4; i > 0;) {
+        if ([i] > 1) {
+            console.log([i] - 1);
+            counter.innerText = [i] - 1;
+            i--;
+        } else if ([i] >= 1) {
+            console.log("Go!");
+            counter.innerText = "Go!";
+            i--;
+            computerChoice();
         }
+    }
+}
+
+function computerChoice() {
+    const computerSelection = document.getElementById("computer-selection");
+    var computerSelected = Math.floor(Math.random() * 5);
+
+    if (computerSelected === 0) {
+        computerSelection.setAttribute("data-type", "rock");
+        computerSelection.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">`;
+    } else if (computerSelected === 1) {
+        computerSelection.setAttribute("data-type", "paper");
+        computerSelection.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">`;
+    } else if (computerSelected === 2) {
+        computerSelection.setAttribute("data-type", "scissors");
+        computerSelection.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">`;
+    } else if (computerSelected === 3) {
+        computerSelection.setAttribute("data-type", "lizard");
+        computerSelection.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">`;
+    } else if (computerSelected === 4) {
+        computerSelection.setAttribute("data-type", "spock");
+        computerSelection.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">`;
+    }
+    checkWinner();
+}
+
+function checkWinner() {
+    let player = document.getElementById("player-selection").getAttribute("data-type");
+    let computer = document.getElementById("computer-selection").getAttribute("data-type");
+
+    if (player === "rock") {
+        if (computer === "scissors") {
+            var win = true;
+        } else if (computer === "lizard") {
+            var win = true;
+        } else if (computer ==="paper") {
+            var loss = true;
+        } else if (computer === "spock") {
+            var loss = true;
+        } else {
+            var draw = true;
+        }
+    } else if (player === "paper") {
+        if (computer === "rock") {
+            var win = true;
+        } else if (computer === "spock") {
+            var win = true;
+        } else if (computer === "scissors") {
+            var loss = true;
+        } else if (computer === "lizard") {
+            var loss = true;
+        } else {
+            var draw = true;
+        }
+    } else if (player === "scissors") {
+        if (computer === "paper") {
+            var win = true;
+        } else if (computer === "lizard") {
+            var win = true;
+        } else if (computer === "rock") {
+            var loss = true;
+        } else if (computer === "spock") {
+            var loss = true;
+        } else {
+            var draw = true;
+        }
+    } else if (player === "lizard") {
+        if (computer === "paper") {
+            var win = true;
+        } else if (computer === "spock") {
+            var win = true;
+        } else if (computer === "rock") {
+            var loss = true;
+        } else if (computer === "scissors") {
+            var loss = true;
+        } else {
+            var draw = true;
+        }
+    } else if (player === "spock") {
+        if (computer === "rock") {
+            var win = true;
+        } else if (computer === "scissors") {
+            var win = true;
+        } else if (computer === "paper") {
+            var loss = true;
+        } else if (computer === "lizard") {
+            var loss = true;
+        } else {
+            var draw = true;
+        }
+    } 
+
+    if (win === true) {
+        console.log("victory");
+    } else if (loss === true) {
+        console.log("Defeat");
+    } else if (draw === true) {
+        console.log("stalemate");
+    }
 }
