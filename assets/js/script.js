@@ -101,23 +101,22 @@ function roundStart() {
         for (i = 0; i < playerChoices.length; i++) {
             playerChoices[i].style.display = "none";
         }
-        
-        countDown;
+        countDown();
     })
 }
 
 function countDown() {
-    let counter = document.getElementById("game-countdown");
-
-    for (let timer = 3; timer => 0; timer--) {
-
-        function countDownTimer() {
-            if (timer > 0) {
-                counter.innerHTML = `<p>${timer}</p>`;
-            } else if (timer = 0) {
-                counter.innerHTML = `<p>Go!</p>`;
+    let counter = document.getElementById("game-countdown").getElementsByTagName("p")[0];
+    
+        for (i = 4; i > 0;) {
+            if ([i] > 1) {
+                console.log([i] - 1);
+                counter.innerText = [i] - 1;
+                i--;
+            } else if ([i] >= 1) {
+                console.log("Go!");
+                counter.innerText = "Go!";
+                i--;
             }
         }
-    }
 }
-
