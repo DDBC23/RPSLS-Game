@@ -44,50 +44,59 @@ window.addEventListener("click", function (event) {
     }
 })
 
-let playerChoices = document.getElementsByClassName("rpsls-selector");
+document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
 
 /**Changes player choice to selected option and creates confirm button */
-for (const playerChoice of playerChoices) {
-    playerChoice.addEventListener("click", function playerSelection() {
-        let playerSelected = document.getElementById("player-selection");
-        var playerPick = "";
+function playerSelection() {
 
-        if (this.getAttribute("data-type") === "rock-selector") {
-            playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
+    let playerChoices = document.getElementsByClassName("rpsls-selector");
+
+    for (const playerChoice of playerChoices) {
+        playerChoice.addEventListener("click", function () {
+            let playerSelected = document.getElementById("player-selection");
+            var playerPick = "";
+
+            if (this.getAttribute("data-type") === "rock-selector") {
+                playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
-            playerPick = "rock";
-        } else if (this.getAttribute("data-type") === "paper-selector") {
-            playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
+                playerPick = "rock";
+            } else if (this.getAttribute("data-type") === "paper-selector") {
+                playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Ready to wrap this up?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
-            playerPick = "paper";
-        } else if (this.getAttribute("data-type") === "scissors-selector") {
-            playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
+                playerPick = "paper";
+            } else if (this.getAttribute("data-type") === "scissors-selector") {
+                playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Will you make the cut?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
-            playerPick = "scissors";
-        } else if (this.getAttribute("data-type") === "lizard-selector") {
-            playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
+                playerPick = "scissors";
+            } else if (this.getAttribute("data-type") === "lizard-selector") {
+                playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Ready to gecko-ing?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
-            playerPick = "lizard";
-        } else if (this.getAttribute("data-type") === "spock-selector") {
-            playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
+                playerPick = "lizard";
+            } else if (this.getAttribute("data-type") === "spock-selector") {
+                playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Ready to Trek them out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
-            playerPick = "spock";
-        }
-        playerSelected.setAttribute("data-type", playerPick);
-        roundStart();
-    })
+                playerPick = "spock";
+            }
+            playerSelected.setAttribute("data-type", playerPick);
+            roundStart();
+        })
+    }
 }
+
+
+
 
 /** player choice confirmation and round start */
 function roundStart() {
-    document.getElementById("player-confirm").addEventListener("click", function () {
+    document.getElementById("player-confirm").addEventListener("click", function (event) {
 
-        document.getElementById("player-confirm").style.display = "none";
+        let playerChoices = document.getElementsByClassName("rpsls-selector");
+        this.remove();
         let roundChoices = document.getElementById("selections")
 
         roundChoices.style.margin = "10rem 10rem 8rem 10rem";
@@ -101,26 +110,10 @@ function roundStart() {
         for (i = 0; i < playerChoices.length; i++) {
             playerChoices[i].style.display = "none";
         }
-        countDown();
+        computerChoice();
     })
 }
 
-function countDown() {
-    let counter = document.getElementById("game-countdown").getElementsByTagName("p")[0];
-
-    for (i = 4; i > 0;) {
-        if ([i] > 1) {
-            console.log([i] - 1);
-            counter.innerText = [i] - 1;
-            i--;
-        } else if ([i] >= 1) {
-            console.log("Go!");
-            counter.innerText = "Go!";
-            i--;
-            computerChoice();
-        }
-    }
-}
 
 function computerChoice() {
     const computerSelection = document.getElementById("computer-selection");
@@ -154,7 +147,7 @@ function checkWinner() {
             var win = true;
         } else if (computer === "lizard") {
             var win = true;
-        } else if (computer ==="paper") {
+        } else if (computer === "paper") {
             var loss = true;
         } else if (computer === "spock") {
             var loss = true;
@@ -209,13 +202,44 @@ function checkWinner() {
         } else {
             var draw = true;
         }
-    } 
+    }
 
     if (win === true) {
         console.log("victory");
+        playerWin();
     } else if (loss === true) {
         console.log("Defeat");
     } else if (draw === true) {
         console.log("stalemate");
     }
+
+    document.getElementById("player-selection").removeAttribute("data-type");
+    document.getElementById("computer-selection").removeAttribute("data-type");
+}
+
+function playerWin() {
+    var score = "";
+    let currentScore = document.getElementById("score");
+    score++;
+    currentScore.innerText = ("Score: " + score);
+    roundReset();
+}
+
+function roundReset() {
+    let roundChoices = document.getElementById("selections");
+    let playerChoices = document.getElementsByClassName("rpsls-selector");
+
+    roundChoices.style.margin = "2rem 3rem 0 3rem";
+    roundChoices.style.transform = "scale(100%)";
+
+    let choiceTags = roundChoices.getElementsByTagName("figcaption");
+    for (i = 0; i < choiceTags.length; i++) {
+        choiceTags[i].style.display = "block";
+    }
+
+    for (i = 0; i < playerChoices.length; i++) {
+        playerChoices[i].style.display = "block";
+    }
+
+    playerSelection();
 }
