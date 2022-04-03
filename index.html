@@ -14,8 +14,8 @@
     <header>
         <nav>
             <ul id="header-buttons">
-                <li class="menu-button" id="modes-button">
-                    <button class="menu-button"> Game Modes </button>
+                <li class="menu-button">
+                    <button id="modes" class="menu-button"> Game Modes </button>
                     <div class="dropdown-content" id="game-drop-content">
                         <div>
                             <button id="rpsls-mode">RPSLS</button>
@@ -25,11 +25,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="menu-button" id="rules">
-                    <button class="menu-button"> Rules </button>
+                <li class="menu-button">
+                    <button id="rules" class="menu-button"> Rules </button>
                     <div class="dropdown-content" id="rules-drop-content">
                         <div>
-                            <button id="rpsls-rules">RPSLS</button>
+                            <button class="rpsls-rules-area" id="rpsls-rules">RPSLS</button>
                         </div>
                         <div>
                             <button id="rps-rules">RPS</button>
@@ -40,7 +40,7 @@
                     <button id="high-scores"> High Scores </button>
                 </li>
             </ul>
-            <div id="rpsls-rules-window">
+            <div class="rules-window" id="rpsls-rules-window">
                 <img src="/assets/images/rpsls-rules.png" alt="rock paper scissors lizard spock rules diagram">
                 <table id="rpsls-table">
                     <tr>
@@ -75,7 +75,7 @@
                     </tr>
                 </table>
             </div>
-            <div id="rps-rules-window"></div>
+            <div class="rules-window" id="rps-rules-window"></div>
         </nav>
     </header>
     <h1 id="game-name">Rock Paper Scissors Lizard Spock</h1>

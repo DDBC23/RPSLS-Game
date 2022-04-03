@@ -75,7 +75,8 @@ h1 {
     height: 72vh;
     width: 90vw;
     margin: 0 auto;
-    border: 1rem double #3a3a3a;
+    border: 1rem #3a3a3a;
+    border-style: ridge;
     background-color: transparent;
     z-index: 1;
 }
@@ -163,7 +164,7 @@ h1 {
     color: #3a3a3a;
 }
 
-#rpsls-rules-window {
+.rules-window {
     display: none;
     position: fixed;
     justify-content: space-evenly;
