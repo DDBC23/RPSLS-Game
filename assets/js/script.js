@@ -13,6 +13,14 @@ function gameDrop(event) {
 
 window.addEventListener("click", function(event) {
     let dropdownContent = document.getElementsByClassName("dropdown-content");
+    const rpslsRulesWindow = document.getElementById("rpsls-rules-window");
+    let rpslsRulesFull = rpslsRulesWindow.children[0, 1, 2];
+
+    if (event.target === rpslsRulesWindow) {
+        if (rpslsRulesWindow.style.display === "flex") {
+        rpslsRulesWindow.style.display = "none";
+        }
+    }
 
     if (event.target.classList.contains("menu-button") === false) {
         for (dropdown of dropdownContent) {
@@ -53,27 +61,34 @@ let playerChoices = document.getElementsByClassName("rpsls-selector");
 for (const playerChoice of playerChoices) {
     playerChoice.addEventListener("click", function playerSelection() {
         let playerSelected = document.getElementById("player-selection");
+        var playerPick ="";
 
         if (this.getAttribute("data-type") === "rock-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
+            playerPick = "rock";
         } else if (this.getAttribute("data-type") === "paper-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Ready to wrap this up?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
+                playerPick = "paper";
         } else if (this.getAttribute("data-type") === "scissors-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Will you make the cut?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
+                playerPick = "scissors";
         } else if (this.getAttribute("data-type") === "lizard-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Ready to gecko-ing?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
+            playerPick = "lizard";
         } else if (this.getAttribute("data-type") === "spock-selector") {
             playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Ready to Trek them out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
+                playerPick = "spock";
         }
+        playerSelected.setAttribute("data-type", playerPick);
     })
 }
