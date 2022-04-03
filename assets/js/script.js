@@ -8,7 +8,7 @@ window.addEventListener("click", function (event) {
             dropdown.style.display = "none";
         }
     }
-    
+
     // rules dropdown show or hide
     const rulesList = document.getElementById("rules-drop-content");
     const rulesButton = document.getElementById("rules");
@@ -79,5 +79,45 @@ for (const playerChoice of playerChoices) {
             playerPick = "spock";
         }
         playerSelected.setAttribute("data-type", playerPick);
+        roundStart();
     })
 }
+
+/** player choice confirmation and round start */
+function roundStart() {
+    document.getElementById("player-confirm").addEventListener("click", function () {
+
+        document.getElementById("player-confirm").style.display = "none";
+        let roundChoices = document.getElementById("selections")
+
+        roundChoices.style.margin = "10rem 10rem 8rem 10rem";
+        roundChoices.style.transform = "scale(120%)";
+
+        let choiceTags = roundChoices.getElementsByTagName("figcaption");
+        for (i = 0; i < choiceTags.length; i++) {
+            choiceTags[i].style.display = "none";
+        }
+
+        for (i = 0; i < playerChoices.length; i++) {
+            playerChoices[i].style.display = "none";
+        }
+        
+        countDown;
+    })
+}
+
+function countDown() {
+    let counter = document.getElementById("game-countdown");
+
+    for (let timer = 3; timer => 0; timer--) {
+
+        function countDownTimer() {
+            if (timer > 0) {
+                counter.innerHTML = `<p>${timer}</p>`;
+            } else if (timer = 0) {
+                counter.innerHTML = `<p>Go!</p>`;
+            }
+        }
+    }
+}
+

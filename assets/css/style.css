@@ -72,6 +72,7 @@ h1 {
 }
 
 #game-area {
+    display: flexbox;
     height: 72vh;
     width: 90vw;
     margin: 0 auto;
@@ -103,7 +104,7 @@ h1 {
     margin-top: -1rem;
 }
 
-.selections {
+#selections {
     margin: 2rem 3rem 0 3rem;
     display: flex;
     justify-content: space-evenly;
@@ -140,7 +141,7 @@ h1 {
 
 .scores-and-lives {
     display: block;
-    margin: 5rem auto 0;
+    margin-top: 5rem;
     text-align: center;
     font-size: 2rem;
     text-shadow: 3px 3px #3a3a3a;
