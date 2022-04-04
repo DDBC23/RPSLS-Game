@@ -108,8 +108,38 @@ function roundStart() {
         for (i = 0; i < playerChoices.length; i++) {
             playerChoices[i].style.display = "none";
         }
-        computerChoice();
+        roundCountdown();
     })
+}
+
+/** starts and displays countdown timer when round begins */
+function roundCountdown() {
+
+    let i = 5;
+
+    countdownTimer();
+
+    /** sets delay on roundCounter function */
+    function countdownTimer() {
+        if (i > 1) {
+            setTimeout(() => {
+                roundCounter();
+            }, 1000);
+        } 
+    }
+
+    function roundCounter() {
+        i--;
+        if (i > 1) {
+            countdownTimer();
+            document.getElementById("game-countdown").innerHTML = `<p>${i - 1}</p>`;
+        } else if (i <= 1) {
+            document.getElementById("game-countdown").innerHTML = `<p>Go!</p>`;
+            setTimeout(() => {
+                computerChoice();
+            }, 1000);
+        }
+    }
 }
 
 /** generates computer choice at random */
@@ -154,7 +184,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
-    // player picked paper
+        // player picked paper
     } else if (player === "paper") {
         if (computer === "rock") {
             var win = true;
@@ -167,7 +197,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
-    // player picked scissors
+        // player picked scissors
     } else if (player === "scissors") {
         if (computer === "paper") {
             var win = true;
@@ -180,7 +210,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
-    // player picked lizard
+        // player picked lizard
     } else if (player === "lizard") {
         if (computer === "paper") {
             var win = true;
@@ -193,7 +223,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
-    // player picked spock
+        // player picked spock
     } else if (player === "spock") {
         if (computer === "rock") {
             var win = true;
@@ -240,7 +270,7 @@ function playerWin() {
     }, 2500);
 }
 
-/** resets interface */
+/** resets interface and starts new round */
 function roundReset() {
     let roundChoices = document.getElementById("selections");
     let playerChoices = document.getElementsByClassName("rpsls-selector");
@@ -261,4 +291,3 @@ function roundReset() {
 
     playerSelection();
 }
-
