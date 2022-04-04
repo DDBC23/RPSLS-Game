@@ -89,8 +89,6 @@ function playerSelection() {
 }
 
 
-
-
 /** player choice confirmation and round start */
 function roundStart() {
     document.getElementById("player-confirm").addEventListener("click", function (event) {
@@ -114,7 +112,7 @@ function roundStart() {
     })
 }
 
-
+/** generates computer choice at random */
 function computerChoice() {
     const computerSelection = document.getElementById("computer-selection");
     var computerSelected = Math.floor(Math.random() * 5);
@@ -138,10 +136,12 @@ function computerChoice() {
     checkWinner();
 }
 
+/** verifies round winner and calls each result function */
 function checkWinner() {
     let player = document.getElementById("player-selection").getAttribute("data-type");
     let computer = document.getElementById("computer-selection").getAttribute("data-type");
 
+    // player picked rock
     if (player === "rock") {
         if (computer === "scissors") {
             var win = true;
@@ -154,6 +154,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
+    // player picked paper
     } else if (player === "paper") {
         if (computer === "rock") {
             var win = true;
@@ -166,6 +167,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
+    // player picked scissors
     } else if (player === "scissors") {
         if (computer === "paper") {
             var win = true;
@@ -178,6 +180,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
+    // player picked lizard
     } else if (player === "lizard") {
         if (computer === "paper") {
             var win = true;
@@ -190,6 +193,7 @@ function checkWinner() {
         } else {
             var draw = true;
         }
+    // player picked spock
     } else if (player === "spock") {
         if (computer === "rock") {
             var win = true;
@@ -204,6 +208,7 @@ function checkWinner() {
         }
     }
 
+    // calls function based on result
     if (win === true) {
         console.log("victory");
         playerWin();
@@ -221,17 +226,26 @@ function checkWinner() {
 
 let score = 0;
 
+/** updates score, displays winner message and starts new round */
 function playerWin() {
     score++;
     var newScore = score;
     let currentScore = document.getElementById("score");
     currentScore.innerText = ("Score: " + newScore);
-    roundReset();
+
+    document.getElementById("game-countdown").innerHTML = `<p>Winner!</p>`;
+
+    setTimeout(() => {
+        roundReset();
+    }, 2500);
 }
 
+/** resets interface */
 function roundReset() {
     let roundChoices = document.getElementById("selections");
     let playerChoices = document.getElementsByClassName("rpsls-selector");
+
+    document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
 
     roundChoices.style.margin = "2rem 3rem 0 3rem";
     roundChoices.style.transform = "scale(100%)";
@@ -247,3 +261,4 @@ function roundReset() {
 
     playerSelection();
 }
+
