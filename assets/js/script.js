@@ -46,7 +46,7 @@ window.addEventListener("click", function (event) {
 
 document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
 
-/**Changes player choice to selected option and creates confirm button */
+/**changes player choice to selected option and creates confirm button */
 function playerSelection() {
 
     let playerChoices = document.getElementsByClassName("rpsls-selector");
@@ -115,25 +115,28 @@ function roundStart() {
 /** starts and displays countdown timer when round begins */
 function roundCountdown() {
 
-    let i = 5;
+    document.getElementById("game-countdown").innerHTML = `<p></p>`;
+
+    let i = 4;
 
     countdownTimer();
 
     /** sets delay on roundCounter function */
     function countdownTimer() {
-        if (i > 1) {
+        if (i >= 1) {
             setTimeout(() => {
                 roundCounter();
             }, 1000);
-        } 
+        }
     }
 
+    /** displays countdown timer and calls computerChoice function */
     function roundCounter() {
         i--;
-        if (i > 1) {
+        if (i >= 1) {
             countdownTimer();
-            document.getElementById("game-countdown").innerHTML = `<p>${i - 1}</p>`;
-        } else if (i <= 1) {
+            document.getElementById("game-countdown").innerHTML = `<p>${i}</p>`;
+        } else if (i <= 0) {
             document.getElementById("game-countdown").innerHTML = `<p>Go!</p>`;
             setTimeout(() => {
                 computerChoice();
@@ -142,7 +145,7 @@ function roundCountdown() {
     }
 }
 
-/** generates computer choice at random */
+/** generates computer choice at random and calls checkWinner function */
 function computerChoice() {
     const computerSelection = document.getElementById("computer-selection");
     var computerSelected = Math.floor(Math.random() * 5);
@@ -244,7 +247,7 @@ function checkWinner() {
         playerWin();
     } else if (loss === true) {
         console.log("Defeat");
-        roundReset();
+        playerLoss();
     } else if (draw === true) {
         console.log("stalemate");
         roundReset();
@@ -256,7 +259,7 @@ function checkWinner() {
 
 let score = 0;
 
-/** updates score, displays winner message and starts new round */
+/** updates score, displays winner message and calls roundReset function */
 function playerWin() {
     score++;
     var newScore = score;
@@ -267,10 +270,31 @@ function playerWin() {
 
     setTimeout(() => {
         roundReset();
-    }, 2500);
+    }, 2000);
 }
 
-/** resets interface and starts new round */
+let playerLives = 3;
+
+function playerLoss() {
+    playerLives--;
+    var newPlayerLives = playerLives;
+
+    let livesBoxes = document.getElementsByClassName("lives-boxes");
+
+    for (livesBox of livesBoxes) {
+
+        if (newPlayerLives = 2) {
+            console.log(newPlayerLives);
+            livesBox[0].innerHTML = `<p>X</p>`;
+        }
+    }
+
+    setTimeout(() => {
+        roundReset();
+    }, 2000);
+}
+
+/** resets interface and calls playerSelection function */
 function roundReset() {
     let roundChoices = document.getElementById("selections");
     let playerChoices = document.getElementsByClassName("rpsls-selector");
