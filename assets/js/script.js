@@ -209,19 +209,23 @@ function checkWinner() {
         playerWin();
     } else if (loss === true) {
         console.log("Defeat");
+        roundReset();
     } else if (draw === true) {
         console.log("stalemate");
+        roundReset();
     }
 
     document.getElementById("player-selection").removeAttribute("data-type");
     document.getElementById("computer-selection").removeAttribute("data-type");
 }
 
+let score = 0;
+
 function playerWin() {
-    var score = "";
-    let currentScore = document.getElementById("score");
     score++;
-    currentScore.innerText = ("Score: " + score);
+    var newScore = score;
+    let currentScore = document.getElementById("score");
+    currentScore.innerText = ("Score: " + newScore);
     roundReset();
 }
 
