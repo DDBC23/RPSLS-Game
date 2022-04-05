@@ -301,18 +301,27 @@ function playerLoss() {
 
 /** resets interface and calls playerSelection function */
 function roundReset() {
+
+    // resets selections styling
     let roundChoices = document.getElementById("selections");
-    let playerChoices = document.getElementsByClassName("rpsls-selector");
-
-    document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
-
-    roundChoices.style.margin = "2rem 3rem 0 3rem";
-    roundChoices.style.transform = "scale(100%)";
 
     let choiceTags = roundChoices.getElementsByTagName("figcaption");
     for (i = 0; i < choiceTags.length; i++) {
         choiceTags[i].style.display = "block";
     }
+    
+    roundChoices.style.margin = "2rem 3rem 0 3rem";
+    roundChoices.style.transform = "scale(100%)";
+
+    // resets selections images and captions
+    document.getElementById("player-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
+    <figcaption>Make your choice!</figcaption>`;
+    document.getElementById("computer-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
+    <figcaption>What could it be...</figcaption>`;
+    document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
+    
+    // resets rpsls-selector styling
+    let playerChoices = document.getElementsByClassName("rpsls-selector");
 
     for (i = 0; i < playerChoices.length; i++) {
         playerChoices[i].style.display = "block";
