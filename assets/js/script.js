@@ -279,6 +279,8 @@ let losses = 0;
 /** updates lives boxes and calls either roundReset or gameOver function*/
 function playerLoss() {
 
+    document.getElementById("game-countdown").innerHTML = `<p>Defeat!</p>`;
+
     let livesBox = document.getElementsByClassName("lives-box");
 
     if (losses === 1) {
@@ -296,6 +298,9 @@ function playerLoss() {
     } else if (losses === 3) {
         console.log(losses);
         livesBox[2].innerHTML = `<p>X</p>`;
+        setTimeout(() => {
+            gameOver();
+        }, 2000);
     }
 }
 
@@ -327,5 +332,23 @@ function roundReset() {
         playerChoices[i].style.display = "block";
     }
 
+    if (losses < 4 === true) {
     playerSelection();
+    }
+}
+
+/** ends current game, displays game score and calls newGame function */
+function gameOver () {
+    document.getElementById("game-area").style.display = "none";
+    document.getElementById("game-name").style.display = "none";
+
+    let endScore = parseInt(document.getElementById("score").innerText);
+    let gameOverWindow = document.getElementById("game-over-window");
+
+    gameOverWindow.getElementsByTagName("h2").innerText = "You scored: " + endScore;
+
+    let startNewGame = document.getElementById("new-game");
+
+    startNewGame.addEventListener("click", newGame);
+
 }

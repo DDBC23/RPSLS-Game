@@ -40,45 +40,53 @@
                     <button id="high-scores"> High Scores </button>
                 </li>
             </ul>
-            <div class="rules-window" id="rpsls-rules-window">
-                <img src="/assets/images/rpsls-rules.png" alt="rock paper scissors lizard spock rules diagram">
-                <table id="rpsls-table">
-                    <tr>
-                        <th>Selection</th>
-                        <th>Wins</th>
-                        <th>Loses</th>
-                    </tr>
-                    <tr>
-                        <td>Rock</td>
-                        <td>Scissors<br> Lizard</td>
-                        <td>Paper<br> Spock</td>
-                    </tr>
-                    <tr>
-                        <td>Paper</td>
-                        <td>Rock<br> Spock</td>
-                        <td>Scissors<br> Lizard</td>
-                    </tr>
-                    <tr>
-                        <td>Scissors</td>
-                        <td>Paper<br> Lizard</td>
-                        <td>Rock<br> Spock</td>
-                    </tr>
-                    <tr>
-                        <td>Lizard</td>
-                        <td>Paper<br> Spock</td>
-                        <td>Rock<br> Scissors</td>
-                    </tr>
-                    <tr>
-                        <td>Spock</td>
-                        <td>Rock<br> Scissors</td>
-                        <td>Paper<br> Lizard</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="rules-window" id="rps-rules-window"></div>
         </nav>
     </header>
-    <h1 id="game-name">Rock Paper Scissors Lizard Spock</h1>
+    <section>
+        <h1 id="game-name">Rock Paper Scissors Lizard Spock</h1>
+        <div class="pop-window" id="rpsls-rules-window">
+            <img src="/assets/images/rpsls-rules.png" alt="rock paper scissors lizard spock rules diagram">
+            <table id="rpsls-table">
+                <tr>
+                    <th>Selection</th>
+                    <th>Wins</th>
+                    <th>Loses</th>
+                </tr>
+                <tr>
+                    <td>Rock</td>
+                    <td>Scissors<br> Lizard</td>
+                    <td>Paper<br> Spock</td>
+                </tr>
+                <tr>
+                    <td>Paper</td>
+                    <td>Rock<br> Spock</td>
+                    <td>Scissors<br> Lizard</td>
+                </tr>
+                <tr>
+                    <td>Scissors</td>
+                    <td>Paper<br> Lizard</td>
+                    <td>Rock<br> Spock</td>
+                </tr>
+                <tr>
+                    <td>Lizard</td>
+                    <td>Paper<br> Spock</td>
+                    <td>Rock<br> Scissors</td>
+                </tr>
+                <tr>
+                    <td>Spock</td>
+                    <td>Rock<br> Scissors</td>
+                    <td>Paper<br> Lizard</td>
+                </tr>
+            </table>
+        </div>
+        <div class="pop-window" id="rps-rules-window"></div>
+        <div class="pop-window" id="game-over-window">
+            <h2>You scored:</h2>
+            <h3>Great job!</h3>
+            <button id="new-game">Play again?</button>
+        </div>
+        <div class="pop-window" id="high-scores-window"></div>
+    </section>
     <section id="game-area">
         <!-- rock paper scissors lizard spock game -->
         <div id="rpsls-selection">
@@ -104,10 +112,10 @@
             </div>
         </div>
         <div id="selections">
-                <div id="player-selection" class="choice-container">
-                    <img src="/assets/images/question-mark.jpg" alt="question mark icon">
-                    <figcaption>Make your choice!</figcaption>
-                </div>
+            <div id="player-selection" class="choice-container">
+                <img src="/assets/images/question-mark.jpg" alt="question mark icon">
+                <figcaption>Make your choice!</figcaption>
+            </div>
             <div id="game-countdown">
                 <p>vs.</p>
             </div>
@@ -118,7 +126,7 @@
         </div>
         <div class="scores-and-lives">
             <p>Score: <span id="score">0</span></p>
-            <div class="lives-boxes">
+            <div id="lives-boxes">
                 <p id="lives-left">Lives Left:</p>
                 <div class="lives-box">
                 </div>
