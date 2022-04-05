@@ -257,14 +257,14 @@ function checkWinner() {
     document.getElementById("computer-selection").removeAttribute("data-type");
 }
 
-let score = 0;
-
 /** updates score, displays winner message and calls roundReset function */
 function playerWin() {
-    score++;
-    var newScore = score;
-    let currentScore = document.getElementById("score");
-    currentScore.innerText = ("Score: " + newScore);
+
+    let score = document.getElementById("score");
+    var newScore = parseInt(score.innerText);
+
+    newScore++;
+    score.innerText = parseInt(newScore);
 
     document.getElementById("game-countdown").innerHTML = `<p>Winner!</p>`;
 
