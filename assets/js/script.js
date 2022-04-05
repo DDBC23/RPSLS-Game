@@ -273,19 +273,31 @@ function playerWin() {
     }, 2000);
 }
 
-let playerLives = 3;
+var losses = 0;
 
 function playerLoss() {
-    playerLives--;
-    var newPlayerLives = playerLives;
 
-    let livesBoxes = document.getElementsByClassName("lives-boxes");
+    let livesBoxes = document.getElementsByClassName("lives-box");
 
-    for (livesBox of livesBoxes) {
+    losses++;
 
-        if (newPlayerLives = 2) {
-            console.log(newPlayerLives);
-            livesBox[0].innerHTML = `<p>X</p>`;
+    livesLost();
+
+    function livesLost() {
+
+
+        if (losses = 1) {
+
+            console.log(losses);
+            livesBoxes[0].innerHTML = `<p>X</p>`;
+        } else if (losses = 2) {
+
+            console.log(losses);
+            livesBoxes[1].innerHTML = `<p>X</p>`;
+        } else if (losses = 3) {
+
+            console.log(losses);
+            livesBoxes[2].innerHTML = `<p>X</p>`;
         }
     }
 
