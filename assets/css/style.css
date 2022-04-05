@@ -32,6 +32,16 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 5rem;
+    text-shadow: 5px 5px #3a3a3a;
+}
+
+h3 {
+    font-size: 4rem;
+    text-shadow: 4px 4px #3a3a3a;
+}
+
 #header-buttons {
     display: flex;
     justify-content: space-evenly;
@@ -72,7 +82,7 @@ h1 {
 }
 
 #game-area {
-    display: flexbox;
+    display: block;
     height: 72vh;
     width: 90vw;
     margin: 0 auto;
@@ -229,6 +239,12 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     align-content: stretch;
+}
+
+#game-over-window {
+    display: none;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 #new-game {

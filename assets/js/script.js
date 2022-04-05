@@ -44,6 +44,24 @@ window.addEventListener("click", function (event) {
     }
 })
 
+/** resets the game area and global variables */
+function newGame() {
+    document.getElementById("game-over-window").style.display = "none";
+    document.getElementById("game-area").style.display = "block";
+    document.getElementById("game-name").style.display = "block";
+
+    let livesBox = document.getElementsByClassName("lives-box");
+    for (let i = 0; i < livesBox.length; i++) {
+    livesBox[i].innerHTML = `<p></p>`;
+    }
+
+    document.getElementById("score").innerText = 0;
+    losses = 0;
+
+    roundReset();
+
+}
+
 document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
 
 /**changes player choice to selected option and creates confirm button */
@@ -98,7 +116,11 @@ function roundStart() {
         let roundChoices = document.getElementById("selections")
 
         roundChoices.style.margin = "10rem 10rem 8rem 10rem";
-        roundChoices.style.transform = "scale(120%)";
+
+        let choices = roundChoices.getElementsByClassName("choice-container")
+        for (i = 0; i < choices.length; i++) {
+            choices[i].style.transform = "scale(1.2)";
+        }
 
         let choiceTags = roundChoices.getElementsByTagName("figcaption");
         for (i = 0; i < choiceTags.length; i++) {
@@ -251,7 +273,7 @@ function checkWinner() {
         playerLoss();
     } else if (draw === true) {
         console.log("Stalemate");
-        roundReset();
+        playerDraw();
     }
 
     document.getElementById("player-selection").removeAttribute("data-type");
@@ -268,6 +290,16 @@ function playerWin() {
     score.innerText = parseInt(newScore);
 
     document.getElementById("game-countdown").innerHTML = `<p>Winner!</p>`;
+
+    setTimeout(() => {
+        roundReset();
+    }, 2000);
+}
+
+/** displays draw message and calls roundReset function */
+function playerDraw() {
+
+    document.getElementById("game-countdown").innerHTML = `<p>Draw!</p>`;
 
     setTimeout(() => {
         roundReset();
@@ -310,13 +342,18 @@ function roundReset() {
     // resets selections styling
     let roundChoices = document.getElementById("selections");
 
+    let choices = roundChoices.getElementsByClassName("choice-container")
+    for (i = 0; i < choices.length; i++) {
+        choices[i].style.transform = "scale(1)";
+    }
+
     let choiceTags = roundChoices.getElementsByTagName("figcaption");
     for (i = 0; i < choiceTags.length; i++) {
         choiceTags[i].style.display = "block";
     }
     
     roundChoices.style.margin = "2rem 3rem 0 3rem";
-    roundChoices.style.transform = "scale(100%)";
+    roundChoices.style.transform = "scale(1)";
 
     // resets selections images and captions
     document.getElementById("player-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
@@ -342,13 +379,17 @@ function gameOver () {
     document.getElementById("game-area").style.display = "none";
     document.getElementById("game-name").style.display = "none";
 
-    let endScore = parseInt(document.getElementById("score").innerText);
+    let endScore = document.getElementById("score").innerText;
     let gameOverWindow = document.getElementById("game-over-window");
 
+    gameOverWindow.style.display = "flex";
     gameOverWindow.getElementsByTagName("h2").innerText = "You scored: " + endScore;
 
     let startNewGame = document.getElementById("new-game");
 
-    startNewGame.addEventListener("click", newGame);
+    startNewGame.addEventListener("click", function() {
+        document.getElementById("game-area").style.display = "block";
+        newGame();
+    })
 
 }
