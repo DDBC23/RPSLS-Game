@@ -243,13 +243,14 @@ function checkWinner() {
 
     // calls function based on result
     if (win === true) {
-        console.log("victory");
+        console.log("Victory");
         playerWin();
     } else if (loss === true) {
         console.log("Defeat");
+        losses++;
         playerLoss();
     } else if (draw === true) {
-        console.log("stalemate");
+        console.log("Stalemate");
         roundReset();
     }
 
@@ -273,37 +274,29 @@ function playerWin() {
     }, 2000);
 }
 
-var losses = 0;
+let losses = 0;
 
+/** updates lives boxes and calls either roundReset or gameOver function*/
 function playerLoss() {
 
-    let livesBoxes = document.getElementsByClassName("lives-box");
+    let livesBox = document.getElementsByClassName("lives-box");
 
-    losses++;
-
-    livesLost();
-
-    function livesLost() {
-
-
-        if (losses = 1) {
-
-            console.log(losses);
-            livesBoxes[0].innerHTML = `<p>X</p>`;
-        } else if (losses = 2) {
-
-            console.log(losses);
-            livesBoxes[1].innerHTML = `<p>X</p>`;
-        } else if (losses = 3) {
-
-            console.log(losses);
-            livesBoxes[2].innerHTML = `<p>X</p>`;
-        }
+    if (losses === 1) {
+        console.log(losses);
+        livesBox[0].innerHTML = `<p>X</p>`;
+        setTimeout(() => {
+            roundReset();
+        }, 2000);
+    } else if (losses === 2) {
+        console.log(losses);
+        livesBox[1].innerHTML = `<p>X</p>`;
+        setTimeout(() => {
+            roundReset();
+        }, 2000);
+    } else if (losses === 3) {
+        console.log(losses);
+        livesBox[2].innerHTML = `<p>X</p>`;
     }
-
-    setTimeout(() => {
-        roundReset();
-    }, 2000);
 }
 
 /** resets interface and calls playerSelection function */
