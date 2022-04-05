@@ -265,14 +265,11 @@ function checkWinner() {
 
     // calls function based on result
     if (win === true) {
-        console.log("Victory");
         playerWin();
     } else if (loss === true) {
-        console.log("Defeat");
         losses++;
         playerLoss();
     } else if (draw === true) {
-        console.log("Stalemate");
         playerDraw();
     }
 
@@ -316,19 +313,16 @@ function playerLoss() {
     let livesBox = document.getElementsByClassName("lives-box");
 
     if (losses === 1) {
-        console.log(losses);
         livesBox[0].innerHTML = `<p>X</p>`;
         setTimeout(() => {
             roundReset();
         }, 2000);
     } else if (losses === 2) {
-        console.log(losses);
         livesBox[1].innerHTML = `<p>X</p>`;
         setTimeout(() => {
             roundReset();
         }, 2000);
     } else if (losses === 3) {
-        console.log(losses);
         livesBox[2].innerHTML = `<p>X</p>`;
         setTimeout(() => {
             gameOver();
@@ -383,7 +377,7 @@ function gameOver () {
     let gameOverWindow = document.getElementById("game-over-window");
 
     gameOverWindow.style.display = "flex";
-    gameOverWindow.getElementsByTagName("h2").innerText = "You scored: " + endScore;
+    gameOverWindow.getElementsByTagName("h2")[0].innerHTML = `You scored: ${endScore}`;
 
     let startNewGame = document.getElementById("new-game");
 
