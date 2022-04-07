@@ -246,7 +246,7 @@ h3 {
     align-items: center;
 }
 
-#new-game {
+.game-over-button {
     height: 3.5rem;
     width: 20rem;
     font-family: "Permanent marker", sans-serif;
@@ -255,11 +255,31 @@ h3 {
     text-shadow: 3px 3px #3a3a3a;
     background-color: #845EC2;
     border: 0.3125rem solid #3a3a3a;
-    margin: 0.125rem 0;
+    margin-top: -2rem;
 }
 
-#new-game:hover {
+.game-over-button:hover {
     background-color: #225762;
+}
+
+label {
+    background-color: transparent;
+    font-size: 2rem;
+    font-family: "Permanent marker", sans-serif;
+    text-align: center;
+    color: #edebeb;
+    text-shadow: 3px 3px #3a3a3a;
+    margin-bottom: -3rem;
+}
+
+input {
+    background-color: transparent;
+    font-size: 3rem;
+    font-family: "Permanent marker", sans-serif;
+    text-align: center;
+    color: #edebeb;
+    text-shadow: 3px 3px #3a3a3a;
+    border: 0.3125rem solid #3a3a3a;
 }
 
 #high-scores-window {

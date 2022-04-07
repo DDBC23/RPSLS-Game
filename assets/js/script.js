@@ -120,7 +120,6 @@ function playerSelection() {
 
 /** player choice confirmation and round start */
 function roundStart() {
-    gameOver();
     document.getElementById("player-confirm").addEventListener("click", function (event) {
 
         let playerChoices = document.getElementsByClassName("rpsls-selector");
@@ -382,6 +381,9 @@ function roundReset() {
 
 /** ends current game, displays game score and calls newGame function */
 function gameOver() {
+
+    highScore();
+
     document.getElementById("game-area").style.display = "none";
     document.getElementById("game-name").style.display = "none";
 
@@ -393,7 +395,7 @@ function gameOver() {
 
     let startNewGame = document.getElementById("new-game");
 
-    startNewGame.addEventListener("click", function () {
+    startNewGame.addEventListener("click", function() {
         document.getElementById("game-area").style.display = "block";
         newGame();
     })
@@ -402,7 +404,7 @@ function gameOver() {
 function highScore() {
 
     let endScore = parseInt(document.getElementById("score").innerText);
-    
+
     var rpslsFirstScore = document.getElementById("rpsls-score-table").rows[0].cells[2].innerText;
     var rpslsSecondScore = document.getElementById("rpsls-score-table").rows[1].cells[2].innerText;
     var rpslsThirdScore = document.getElementById("rpsls-score-table").rows[2].cells[2].innerText;
@@ -413,23 +415,52 @@ function highScore() {
     var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
     let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
 
-    if (endScore > rpslsHighScores[0] && endScore < rpslsHighScores[1]) {
-        rpslsHighScores.unshift(endScore);
-        rpslsHighScores.pop();
-        document.getElementById("rpsls-score-table").rows[2].cells[2].innerText = endScore;
-        console.log("You got third place!");
-        console.log(rpslsHighScores);
-    } else if (endScore > rpslsHighScores[1] && endScore < rpslsHighScores[2]) {
-        rpslsHighScores.splice(1, 1, endScore);
-        document.getElementById("rpsls-score-table").rows[1].cells[2].innerText = endScore;
-        console.log("You got second place!");
-        console.log(rpslsHighScores);
-    } else if (endScore > rpslsHighScores[2]) {
-        rpslsHighScores.shift();
-        rpslsHighScores.push(endScore);
-        document.getElementById("rpsls-score-table").rows[0].cells[2].innerText = endScore;
-        console.log("You got first place!");
-        console.log(rpslsHighScores);
+    if (endScore > rpslsHighScores[0]) {
+
+        document.getElementById("game-over-window").innerHTML = `<h2>You scored: ${endScore}</h2>
+        <h3>New High Score!</h3>
+        <label>Enter Name</label>
+        <input type="text" name="new-score-name" maxlength="4" id="new-score-name">
+        <button class="game-over-button" id="submit-score">Submit</button>
+        <button style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
+
+        document.getElementById("submit-score").addEventListener("click", function() {
+            updateScore();
+        })
+    }
+
+    function updateScore() {
+
+        var newScoreName = document.getElementById("new-score-name").value;
+
+        document.getElementsByName("new-score-name")[0].style.display = "none";
+        document.getElementsByTagName("label")[0].style.display = "none";
+        document.getElementById("submit-score").style.display = "none";
+        document.getElementById("new-game").style.display = "block";
+
+        if (endScore < rpslsHighScores[1]) {
+            rpslsHighScores.unshift(endScore);
+            rpslsHighScores.pop();
+            document.getElementById("rpsls-score-table").rows[2].cells[2].innerText = endScore;
+
+            rpslsScoreNames.unshift(newScoreName)
+            rpslsScoreNames.pop();
+            document.getElementById("rpsls-score-table").rows[2].cells[1].innerHTML = newScoreName;
+        } else if (endScore < rpslsHighScores[2]) {
+            rpslsHighScores.splice(1, 1, endScore);
+            document.getElementById("rpsls-score-table").rows[1].cells[2].innerText = endScore;
+
+            rpslsScoreNames.splice(1, 1, newScoreName);
+            document.getElementById("rpsls-score-table").rows[1].cells[1].innerHTML = newScoreName;
+        } else if (endScore > rpslsHighScores[2]) {
+            rpslsHighScores.shift();
+            rpslsHighScores.push(endScore);
+            document.getElementById("rpsls-score-table").rows[0].cells[2].innerText = endScore;
+
+            rpslsScoreNames.shift();
+            rpslsScoreNames.push(newScoreName);
+            document.getElementById("rpsls-score-table").rows[0].cells[1].innerHTML = newScoreName;
+        }
     }
 
     console.log(endScore);
@@ -438,4 +469,3 @@ function highScore() {
 
 
 }
-
