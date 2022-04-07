@@ -395,12 +395,13 @@ function gameOver() {
 
     let startNewGame = document.getElementById("new-game");
 
-    startNewGame.addEventListener("click", function() {
+    startNewGame.addEventListener("click", function () {
         document.getElementById("game-area").style.display = "block";
         newGame();
     })
 }
 
+/** verifies if high score acheived, updates high score and allows name input */
 function highScore() {
 
     let endScore = parseInt(document.getElementById("score").innerText);
@@ -415,6 +416,7 @@ function highScore() {
     var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
     let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
 
+    // checks if high score has been acheived
     if (endScore > rpslsHighScores[0]) {
 
         document.getElementById("game-over-window").innerHTML = `<h2>You scored: ${endScore}</h2>
@@ -424,11 +426,12 @@ function highScore() {
         <button class="game-over-button" id="submit-score">Submit</button>
         <button style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
 
-        document.getElementById("submit-score").addEventListener("click", function() {
+        document.getElementById("submit-score").addEventListener("click", function () {
             updateScore();
         })
     }
 
+    /** updates high scores */
     function updateScore() {
 
         var newScoreName = document.getElementById("new-score-name").value;
@@ -462,10 +465,4 @@ function highScore() {
             document.getElementById("rpsls-score-table").rows[0].cells[1].innerHTML = newScoreName;
         }
     }
-
-    console.log(endScore);
-    console.log(rpslsScoreNames);
-
-
-
 }
