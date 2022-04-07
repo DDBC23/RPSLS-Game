@@ -215,8 +215,6 @@ h3 {
 
 #rpsls-table th {
     font-size: 2rem;
-    background-color: #225762;
-    border: 0.3125rem solid #3a3a3a;
 }
 
 #player-confirm {
@@ -287,7 +285,7 @@ h3 {
     background-color: #845EC2;
 }
 
-.score-ranking {
+.table-category {
     background-color: #225762 !important;
 }
 

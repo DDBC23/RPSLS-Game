@@ -120,6 +120,7 @@ function playerSelection() {
 
 /** player choice confirmation and round start */
 function roundStart() {
+    highScore();
     document.getElementById("player-confirm").addEventListener("click", function (event) {
 
         let playerChoices = document.getElementsByClassName("rpsls-selector");
@@ -295,7 +296,7 @@ function playerWin() {
     var newScore = parseInt(score.innerText);
 
     newScore++;
-    score.innerText = parseInt(newScore);
+    score.innerText = newScore;
 
     document.getElementById("game-countdown").innerHTML = `<p>Winner!</p>`;
 
@@ -400,4 +401,25 @@ function gameOver() {
 
 function highScore() {
 
+    let endScore = parseInt(document.getElementById("score").innerText);
+    
+    var rpslsFirstScore = parseInt(document.getElementById("rpsls-score-table").rows[0].cells[2].innerText);
+    var rpslsSecondScore = parseInt(document.getElementById("rpsls-score-table").rows[1].cells[2].innerText);
+    var rpslsThirdScore = parseInt(document.getElementById("rpsls-score-table").rows[2].cells[2].innerText);
+    let rpslsHighScores = [rpslsFirstScore, rpslsSecondScore, rpslsThirdScore].reverse();
+
+    var rpslsFirstName = document.getElementById("rpsls-score-table").rows[0].cells[1].innerText;
+    var rpslsSecondName = document.getElementById("rpsls-score-table").rows[1].cells[1].innerText;
+    var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
+    let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
+
+
+
+    console.log(endScore);
+    console.log(rpslsHighScores);
+    console.log(rpslsScoreNames);
+
+
+
 }
+
