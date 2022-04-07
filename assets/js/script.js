@@ -1,9 +1,10 @@
 /** shows or hides dropdown buttons and pop out windows based on event target */
 window.addEventListener("click", function (event) {
-    // dropdown content show or hide
+
     const dropdownContent = document.getElementsByClassName("dropdown-content");
 
-    if (event.target.classList.contains("menu-button") === false) {
+    // hides all dropdown menu buttons
+    if (!event.target.classList.contains("menu-button")) {
         for (dropdown of dropdownContent) {
             dropdown.style.display = "none";
         }
@@ -14,7 +15,7 @@ window.addEventListener("click", function (event) {
     const rulesButton = document.getElementById("rules");
 
     if (event.target === rulesButton) {
-        if (rulesList.style.display = "none") {
+        if (rulesList.style.display !== "block") {
             rulesList.style.display = "block";
         }
     } else if (event.target !== rulesButton) {
@@ -26,7 +27,7 @@ window.addEventListener("click", function (event) {
     const modesButton = document.getElementById("modes");
 
     if (event.target === modesButton) {
-        if (gameModeList.style.display = "none") {
+        if (gameModeList.style.display !== "block") {
             gameModeList.style.display = "block";
         }
     } else if (event.target !== modesButton) {
@@ -42,6 +43,16 @@ window.addEventListener("click", function (event) {
     } else if (event.target !== rpslsRules) {
         rpslsRulesWindow.style.display = "none";
     }
+
+    // high scores window show or hide
+    const highScores = document.getElementById("high-scores");
+    const highScoresWindow = document.getElementById("high-scores-window");
+
+    if (event.target === highScores) {
+        highScoresWindow.style.display = "flex";
+    } else if (event.target !== highScores) {
+        highScoresWindow.style.display = "none";
+    }
 })
 
 /** resets the game area and global variables */
@@ -52,7 +63,7 @@ function newGame() {
 
     let livesBox = document.getElementsByClassName("lives-box");
     for (let i = 0; i < livesBox.length; i++) {
-    livesBox[i].innerHTML = `<p></p>`;
+        livesBox[i].innerHTML = `<p></p>`;
     }
 
     document.getElementById("score").innerText = 0;
@@ -345,7 +356,7 @@ function roundReset() {
     for (i = 0; i < choiceTags.length; i++) {
         choiceTags[i].style.display = "block";
     }
-    
+
     roundChoices.style.margin = "2rem 3rem 0 3rem";
     roundChoices.style.transform = "scale(1)";
 
@@ -355,7 +366,7 @@ function roundReset() {
     document.getElementById("computer-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
     <figcaption>What could it be...</figcaption>`;
     document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
-    
+
     // resets rpsls-selector styling
     let playerChoices = document.getElementsByClassName("rpsls-selector");
 
@@ -364,12 +375,12 @@ function roundReset() {
     }
 
     if (losses < 4 === true) {
-    playerSelection();
+        playerSelection();
     }
 }
 
 /** ends current game, displays game score and calls newGame function */
-function gameOver () {
+function gameOver() {
     document.getElementById("game-area").style.display = "none";
     document.getElementById("game-name").style.display = "none";
 
@@ -381,9 +392,12 @@ function gameOver () {
 
     let startNewGame = document.getElementById("new-game");
 
-    startNewGame.addEventListener("click", function() {
+    startNewGame.addEventListener("click", function () {
         document.getElementById("game-area").style.display = "block";
         newGame();
     })
+}
+
+function highScore() {
 
 }
