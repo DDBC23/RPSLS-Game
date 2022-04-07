@@ -110,6 +110,7 @@ h3 {
     height: 9rem;
     width: 9rem;
 }
+
 .rpsls-selector figcaption {
     margin-top: -1rem;
 }
@@ -179,14 +180,14 @@ h3 {
     display: none;
     position: fixed;
     justify-content: space-evenly;
-    align-items:stretch;
+    align-items: stretch;
     right: 10vw;
     top: 25vh;
     height: 42.5rem;
     width: 75vw;
     background-color: #589595;
     border: 1rem #3a3a3a;
-    border-style:ridge;
+    border-style: ridge;
     z-index: 8;
 }
 
@@ -268,26 +269,32 @@ h3 {
     align-content: center;
 }
 
-.scores-table {
-    row-gap: 1rem;
-    display: inline-block;
+.scores-category {
     text-align: center;
     font-family: "Permanent marker", sans-serif;
     font-size: 2rem;
     text-shadow: 3px 3px #3a3a3a;
 }
 
-.scores-table td {
-    width: 10rem;
-    margin: 1rem;
+.scores-category table {
+    border-collapse: separate;
+    border-spacing: 0.5rem 2rem;
+}
+
+.scores-category td {
+    width: 8rem;
     border: 0.3125rem solid #3a3a3a;
     background-color: #845EC2;
 }
 
-.score-heading {
-    width: 31rem;
-    margin: 8rem auto 2rem;
-    font-size: 2.5rem;
-    background-color: #225762;
-    border: 0.3125rem solid #3a3a3a;
+.score-ranking {
+    background-color: #225762 !important;
 }
+
+.score-heading {
+    width: 26.25rem;
+    margin: 4rem auto 0;
+    font-size: 3rem;
+}
+
+
