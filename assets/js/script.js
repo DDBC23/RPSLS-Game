@@ -64,7 +64,7 @@ function newGame() {
 
     let livesBox = document.getElementsByClassName("lives-box");
     for (let i = 0; i < livesBox.length; i++) {
-        livesBox[i].innerHTML = `<p></p>`;
+        livesBox[i].style.backgroundColor = "#edebeb";
     }
 
     document.getElementById("score").innerText = 0;
@@ -126,8 +126,6 @@ function roundStart() {
         let playerChoices = document.getElementsByClassName("rpsls-selector");
         this.remove();
         let roundChoices = document.getElementById("selections")
-
-        roundChoices.style.marginTop = "10rem";
 
         let choices = roundChoices.getElementsByClassName("choice-container")
         for (i = 0; i < choices.length; i++) {
@@ -325,17 +323,17 @@ function playerLoss() {
     let livesBox = document.getElementsByClassName("lives-box");
 
     if (losses === 1) {
-        livesBox[0].innerHTML = `<p>X</p>`;
+        livesBox[0].style.backgroundColor = "#3a3a3a";
         setTimeout(() => {
             roundReset();
         }, 2000);
     } else if (losses === 2) {
-        livesBox[1].innerHTML = `<p>X</p>`;
+        livesBox[1].style.backgroundColor = "#3a3a3a";
         setTimeout(() => {
             roundReset();
         }, 2000);
     } else if (losses === 3) {
-        livesBox[2].innerHTML = `<p>X</p>`;
+        livesBox[2].style.backgroundColor = "#3a3a3a";
         setTimeout(() => {
             gameOver();
         }, 2000);
@@ -358,7 +356,6 @@ function roundReset() {
         choiceTags[i].style.display = "block";
     }
 
-    roundChoices.style.marginTop = "2rem";
     roundChoices.style.transform = "scale(1)";
 
     // resets selections images and captions
