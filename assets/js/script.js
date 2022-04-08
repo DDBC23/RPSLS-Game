@@ -4,6 +4,12 @@ window.addEventListener("click", function (event) {
     const dropdownContent = document.getElementsByClassName("dropdown-content");
     const gameArea = document.getElementById("game-area");
 
+    gameArea.style.display = "block";
+
+    if (losses > 2) {
+        gameArea.style.display = "none";
+    }
+
     // hides all dropdown menu buttons
     if (!event.target.classList.contains("menu-button")) {
         for (dropdown of dropdownContent) {
@@ -41,6 +47,7 @@ window.addEventListener("click", function (event) {
 
     if (event.target === rpslsRules) {
         rpslsRulesWindow.style.display = "flex";
+        gameArea.style.display ="none";
     } else if (event.target !== rpslsRules) {
         rpslsRulesWindow.style.display = "none";
     }
@@ -51,6 +58,7 @@ window.addEventListener("click", function (event) {
 
     if (event.target === highScores) {
         highScoresWindow.style.display = "flex";
+        gameArea.style.display = "none";
     } else if (event.target !== highScores) {
         highScoresWindow.style.display = "none";
     }

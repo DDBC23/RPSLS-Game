@@ -86,8 +86,6 @@ h3 {
 }
 
 #game-area {
-    position: fixed;
-    left: 4vw;
     display: block;
     height: 44rem;
     width: 90vw;
@@ -95,6 +93,7 @@ h3 {
     border-style: ridge;
     background-color: transparent;
     z-index: 1;
+    margin: 0 auto;
 }
 
 #rpsls-selection {
@@ -184,8 +183,6 @@ h3 {
 }
 
 .pop-window {
-    position: fixed;
-    left: 4vw;
     display: none;
     justify-content: space-evenly;
     height: 44rem;
@@ -194,6 +191,7 @@ h3 {
     border: 1rem #3a3a3a;
     border-style: ridge;
     z-index: 3;
+    margin: 0 auto;
 }
 
 #rpsls-rules-window img {
@@ -425,7 +423,6 @@ input {
 
     #game-area {
         height: 45.5rem;
-        left: 2vw;
     }
 
     #rpsls-rules-window {
@@ -441,8 +438,8 @@ input {
 
     #rpsls-rules-window img {
         margin: 0;
-        height: 50vw;
-        width: 50vw;
+        height: 52vw;
+        width: 52vw;
     }
 
     .rpsls-selector figcaption {
@@ -455,7 +452,7 @@ input {
     }
 
     #selections {
-        margin: 1rem 1.5rem 0;
+        margin: 1rem 0 0 5rem;
         flex-flow:column wrap;
         align-content: center;
         float: left;
@@ -471,7 +468,7 @@ input {
 
     .pop-window {
         height: 45.5rem;
-        left: 2vw;
+        margin: 0 auto;
     }
 
     #player-selection {
