@@ -88,7 +88,7 @@ function playerSelection() {
 
             if (this.getAttribute("data-type") === "rock-selector") {
                 playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
-                <figcaption>Ready to rock?</figcaption>
+                <figcaption>Ready to rock out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "rock";
             } else if (this.getAttribute("data-type") === "paper-selector") {
@@ -146,8 +146,6 @@ function roundStart() {
 
 /** starts and displays countdown timer when round begins */
 function roundCountdown() {
-
-    document.getElementById("game-countdown").innerHTML = `<p></p>`;
 
     let i = 4;
 
