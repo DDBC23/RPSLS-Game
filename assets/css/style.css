@@ -10,6 +10,10 @@ body {
     font-family: "Permanent marker", sans-serif;
     color: #edebeb;
     background-image: linear-gradient(to right, #845EC2, #589595, #225762);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 ul {
@@ -82,10 +86,11 @@ h3 {
 }
 
 #game-area {
+    position: fixed;
+    left: 4vw;
     display: block;
     height: 44rem;
     width: 90vw;
-    margin: 0 auto;
     border: 1rem #3a3a3a;
     border-style: ridge;
     background-color: transparent;
@@ -159,7 +164,8 @@ h3 {
 }
 
 #lives-boxes {
-    margin: 1rem 11rem 0 0;
+    margin: 1rem auto;
+    padding-right: 10.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,18 +183,16 @@ h3 {
 }
 
 .pop-window {
-    display: none;
     position: fixed;
+    left: 4vw;
+    display: none;
     justify-content: space-evenly;
-    align-items: stretch;
-    right: 10vw;
-    top: 25vh;
-    height: 42.5rem;
-    width: 75vw;
+    height: 44rem;
+    width: 90vw;
     background-color: #589595;
     border: 1rem #3a3a3a;
     border-style: ridge;
-    z-index: 8;
+    z-index: 3;
 }
 
 #rpsls-rules-window img {
@@ -315,4 +319,47 @@ input {
     font-size: 3rem;
 }
 
+@media screen and (max-width: 1024px) {
 
+    h1 {
+        font-size: 2rem;
+    }
+
+    .rpsls-selector img {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .choice-container {
+        margin-top: 3rem;
+        height: 11rem;
+        width: 11rem;
+        font-size: 1.5rem;
+    }
+
+    .choice-container img {
+        padding-top: 1.25rem;
+        height: 8.5rem;
+        width: 8.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #game-countdown {
+        padding-top: 6rem;
+        font-size: 4rem;
+    }
+
+    .scores-and-lives {
+        margin-top: 7rem;
+        font-size: 1.5rem;
+    }
+
+    #lives-boxes {
+        padding-right: 7.75rem;
+    }
+
+    .lives-box {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+}

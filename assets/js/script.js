@@ -2,6 +2,7 @@
 window.addEventListener("click", function (event) {
 
     const dropdownContent = document.getElementsByClassName("dropdown-content");
+    const gameArea = document.getElementById("game-area");
 
     // hides all dropdown menu buttons
     if (!event.target.classList.contains("menu-button")) {
@@ -126,7 +127,7 @@ function roundStart() {
         this.remove();
         let roundChoices = document.getElementById("selections")
 
-        roundChoices.style.margin = "10rem 10rem 8rem 10rem";
+        roundChoices.style.marginTop = "10rem";
 
         let choices = roundChoices.getElementsByClassName("choice-container")
         for (i = 0; i < choices.length; i++) {
@@ -357,7 +358,7 @@ function roundReset() {
         choiceTags[i].style.display = "block";
     }
 
-    roundChoices.style.margin = "2rem 3rem 0 3rem";
+    roundChoices.style.marginTop = "2rem";
     roundChoices.style.transform = "scale(1)";
 
     // resets selections images and captions
