@@ -89,8 +89,7 @@ h3 {
     display: block;
     height: 44rem;
     width: 90vw;
-    border: 1rem #3a3a3a;
-    border-style: ridge;
+    border: 1rem ridge #3a3a3a;
     background-color: transparent;
     z-index: 1;
     margin: 0 auto;
@@ -416,13 +415,43 @@ input {
 
 @media screen and (max-width: 767px) {
 
+    h1 {
+        margin-top: 1rem;
+        font-size: 1.75rem;
+        text-decoration: none;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    input {
+        width: 85%;
+    }
+
     #header-buttons button {
         font-size: 1.25rem;
+        height: 2.25rem;
         width: 30vw;
+        border: 0.225rem solid #3a3a3a;
     }
 
     #game-area {
-        height: 45.5rem;
+        height: 44rem;
+        border: 0.75rem ridge #3a3a3a;
+    }
+
+    .pop-window {
+        height: 44rem;
+        border: 0.75rem ridge #3a3a3a;
+    }
+
+    #game-over-window {
+        margin-top: 2rem;
     }
 
     #rpsls-rules-window {
@@ -452,11 +481,15 @@ input {
     }
 
     #selections {
-        margin: 1rem 0 0 5rem;
-        flex-flow:column wrap;
+        margin: 0.5rem 0 0 5rem;
+        flex-flow: column wrap;
         align-content: center;
         float: left;
         font-size: 2rem;
+    }
+
+    #rpsls-selection {
+        margin-top: 1rem;
     }
 
     .choice-container {
@@ -498,11 +531,126 @@ input {
 
     .scores-and-lives {
         float: right;
-        margin: 14rem 3rem 0;
-        font-size: 1.5rem;
+        margin: 14rem 1rem 0 0;
+    }
+
+    .lives-box {
+        margin: 0 0.5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        border: 0.25rem solid #3a3a3a;
     }
 
     #computer-selection {
         margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    h1 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin: 0 10%;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    #game-area {
+        border: 0.5rem ridge #3a3a3a;
+        height: 43.5rem;
+    }
+
+    #header-buttons button {
+        font-size: 1rem;
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a;
+        width: 33vw;
+        height: 2rem;
+        border: 0.15625rem solid #3a3a3a;
+    }
+
+    .pop-window {
+        border: 0.5rem ridge #3a3a3a;
+        height: 43.5rem;
+    }
+
+    #rpsls-rules-window img {
+        height: 65vw;
+        width: 65vw;
+    }
+
+    #game-over-window {
+        margin-top: 4rem;
+    }
+
+    #rpsls-selection {
+        flex-flow: row wrap;
+    }
+
+    .rpsls-selector {
+        margin: 0.25rem 1rem;
+    }
+
+    .rpsls-selector img {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .rpsls-selector figcaption {
+        font-size: 1rem;
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a;
+    }
+
+    #selections {
+        margin: 1rem 0 0 1rem;
+        font-size: 1rem;
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a;   
+    }
+
+    .choice-container {
+        height: 6rem;
+        width: 6rem;
+        font-size: 1rem;
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a;   
+    }
+
+    .choice-container img {
+        padding-top: 0.5rem;
+        height: 5rem;
+        width: 5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    #game-countdown {
+        font-size: 1.75rem;
+        padding-top: 1.5rem;
+    }
+
+    .scores-and-lives {
+        float: none;
+        font-size: 1.25rem;
+        margin: 12.5rem 0 0;
+    }
+
+    .lives-box {
+        margin: 0 0.25rem;
+    }
+
+    #player-confirm {
+        width: 6rem;
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a; 
+        border: 0.15625rem solid #3a3a3a;
+    }
+
+    #computer-selection {
+        margin-top: 3rem;
     }
 }

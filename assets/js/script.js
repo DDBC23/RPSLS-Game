@@ -1,12 +1,12 @@
 /** shows or hides dropdown buttons and pop out windows based on event target */
-window.addEventListener("click", function (event) {
+window.addEventListener("click", function dropDowns(event) {
 
     const dropdownContent = document.getElementsByClassName("dropdown-content");
     const gameArea = document.getElementById("game-area");
 
     gameArea.style.display = "block";
 
-    if (losses > 2) {
+    if (document.getElementById("game-over-window").hasAttribute("data-type")) {
         gameArea.style.display = "none";
     }
 
@@ -129,6 +129,7 @@ function playerSelection() {
 
 /** player choice confirmation and round start */
 function roundStart() {
+
     document.getElementById("player-confirm").addEventListener("click", function (event) {
 
         let playerChoices = document.getElementsByClassName("rpsls-selector");
@@ -395,12 +396,14 @@ function gameOver() {
     let gameOverWindow = document.getElementById("game-over-window");
 
     gameOverWindow.style.display = "flex";
+    gameOverWindow.setAttribute("data-type", "active");
     gameOverWindow.getElementsByTagName("h2")[0].innerHTML = `You scored: ${endScore}`;
 
     let startNewGame = document.getElementById("new-game");
 
     startNewGame.addEventListener("click", function () {
         document.getElementById("game-area").style.display = "block";
+        gameOverWindow.removeAttribute("data-type");
         newGame();
     })
 }
