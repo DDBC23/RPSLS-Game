@@ -95,27 +95,27 @@ function playerSelection() {
             var playerPick = "";
 
             if (this.getAttribute("data-type") === "rock-selector") {
-                playerSelected.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">
+                playerSelected.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "rock";
             } else if (this.getAttribute("data-type") === "paper-selector") {
-                playerSelected.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">
+                playerSelected.innerHTML = `<img src="assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Ready to wrap this up?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "paper";
             } else if (this.getAttribute("data-type") === "scissors-selector") {
-                playerSelected.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">
+                playerSelected.innerHTML = `<img src="assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Will you make the cut?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "scissors";
             } else if (this.getAttribute("data-type") === "lizard-selector") {
-                playerSelected.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">
+                playerSelected.innerHTML = `<img src="assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Ready to gecko-ing?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "lizard";
             } else if (this.getAttribute("data-type") === "spock-selector") {
-                playerSelected.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">
+                playerSelected.innerHTML = `<img src="assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Ready to Trek them out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "spock";
@@ -191,19 +191,19 @@ function computerChoice() {
 
     if (computerSelected === 0) {
         computerSelection.setAttribute("data-type", "rock");
-        computerSelection.innerHTML = `<img src="/assets/images/rock.jpg" alt="icon for rock">`;
+        computerSelection.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">`;
     } else if (computerSelected === 1) {
         computerSelection.setAttribute("data-type", "paper");
-        computerSelection.innerHTML = `<img src="/assets/images/paper.jpg" alt="icon for paper">`;
+        computerSelection.innerHTML = `<img src="assets/images/paper.jpg" alt="icon for paper">`;
     } else if (computerSelected === 2) {
         computerSelection.setAttribute("data-type", "scissors");
-        computerSelection.innerHTML = `<img src="/assets/images/scissors.jpg" alt="icon for scissors">`;
+        computerSelection.innerHTML = `<img src="assets/images/scissors.jpg" alt="icon for scissors">`;
     } else if (computerSelected === 3) {
         computerSelection.setAttribute("data-type", "lizard");
-        computerSelection.innerHTML = `<img src="/assets/images/lizard.jpg" alt="icon for lizard">`;
+        computerSelection.innerHTML = `<img src="assets/images/lizard.jpg" alt="icon for lizard">`;
     } else if (computerSelected === 4) {
         computerSelection.setAttribute("data-type", "spock");
-        computerSelection.innerHTML = `<img src="/assets/images/spock.jpg" alt="icon for Spock">`;
+        computerSelection.innerHTML = `<img src="assets/images/spock.jpg" alt="icon for Spock">`;
     }
     checkWinner();
 }
@@ -366,9 +366,9 @@ function roundReset() {
     roundChoices.style.transform = "scale(1)";
 
     // resets selections images and captions
-    document.getElementById("player-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
+    document.getElementById("player-selection").innerHTML = `<img src="assets/images/question-mark.jpg" alt="question mark icon">
     <figcaption>Make your choice!</figcaption>`;
-    document.getElementById("computer-selection").innerHTML = `<img src="/assets/images/question-mark.jpg" alt="question mark icon">
+    document.getElementById("computer-selection").innerHTML = `<img src="assets/images/question-mark.jpg" alt="question mark icon">
     <figcaption>What could it be...</figcaption>`;
     document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
 
