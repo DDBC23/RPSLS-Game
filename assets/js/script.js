@@ -96,7 +96,7 @@ function playerSelection() {
 
             if (this.getAttribute("data-type") === "rock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">
-                <figcaption>Ready to rock out?</figcaption>
+                <figcaption>Ready to rock them?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "rock";
             } else if (this.getAttribute("data-type") === "paper-selector") {
@@ -116,7 +116,7 @@ function playerSelection() {
                 playerPick = "lizard";
             } else if (this.getAttribute("data-type") === "spock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/spock.jpg" alt="icon for Spock">
-                <figcaption>Ready to Trek them out?</figcaption>
+                <figcaption>Ready to Trek out?</figcaption>
                 <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "spock";
             }

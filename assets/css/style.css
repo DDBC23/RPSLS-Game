@@ -377,7 +377,7 @@ input {
         margin-top: 3rem;
         height: 10rem;
         width: 10rem;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .choice-container img {
@@ -404,8 +404,8 @@ input {
     }
 
     #player-confirm {
-        width: 11rem;
-        font-size: 1.25rem;
+        width: 10rem;
+        font-size: 1.15rem;
     }
 }
 
