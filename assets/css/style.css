@@ -555,6 +555,7 @@ input {
     }
 
     h2 {
+        margin-top: -4rem;
         font-size: 2.5rem;
     }
 
@@ -624,7 +625,11 @@ input {
     }
 
     #game-over-window {
-        margin-top: 4rem;
+        margin-top: 1rem;
+    }
+
+    .game-over-button {
+        width: 15rem;
     }
 
     #rpsls-selection {
