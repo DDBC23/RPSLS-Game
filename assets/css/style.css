@@ -560,7 +560,7 @@ input {
     }
 
     #game-area {
-        width: 95vw;
+        width: 94vw;
         box-sizing: border-box;
         border: 0.5rem ridge #3a3a3a;
         height: 29rem;
@@ -576,7 +576,7 @@ input {
     }
 
     .pop-window {
-        width: 95vw;
+        width: 93.5vw;
         box-sizing: border-box;
         height: 35rem;
         border: 0.5rem ridge #3a3a3a;
