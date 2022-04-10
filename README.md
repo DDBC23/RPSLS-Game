@@ -8,53 +8,78 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 ## Features
 
-
 ### Existing Features
+
+#### __Menu and Pop Out Windows__
 
 - __Menu Bar__
 
- - The menu bar allows the user to navigate between different game modes, review rules for each mode and display the current high scores for both game mode using a drop-down style display with a hover visual effect and creates a pop out window for the selected choice.
-
- - This section allows for simple access to information without the need to redirect to multiple pages.
+  - The menu bar allows the user to navigate between different game modes, review rules for each mode and display the current high scores for both game mode using a drop-down style display with a hover visual effect and creates a pop out window for the selected choice.
+  - This section allows for simple access to information without the need to redirect to multiple pages.
 
 ![Menu Bar](/assets/media/menu_bar.png)
 
+- __RPSLS Rules__
+
+  - This pop up window provides both a thematic diagram and table layout describing the rules of rock, paper, scissors, lizard, Spock. This window is hidden once the user clicks anywhere on the screen.
+  - This gives the user a clear understanding of how to play the RPSLS game mode.
+
+![RPSLS Rules](/assets/media/rpsls_rules_window.png)
+
+- __High Scores__
+
+  - This pop up window allows the user to check the top 3 scores for each game mode and has prepopulated information which is replaced once the user achieves a high score. This window is hidden once the user clicks anywhere on the screen.
+
+  - This gives the user a goal to aim for and a sense of achievement for any high scores attained.
+
+![High Scores](/assets/media/high_scores.png)
+
+#### __Game Area__
+
 - __Game Title__
 
- - The game title clearly states the current game mode being played to the user and updates based on the player's selection.
+  - The game title clearly states the current game mode being played to the user and updates based on the player's selection.
 
- - This section helps reaffirm the player's choice of game mode.
+  - This section helps reaffirm the player's choice of game mode.
 
 ![Game Title](/assets/media/game_title.png)
 
 - __Player Round Selection__
 
- - This section allows the player to select their choice for each round and enlarges when the player hovers over each option. Once selected, their choice will be reflected in the player choice area.
+  - This section allows the player to select their choice for each round and enlarges when the player hovers over each option. Once selected, their choice will be reflected in the player choice area.
 
- - This fundamentally allows the user to interact with the game by providing multiple choices on how to play.
+  - This fundamentally allows the user to interact with the game by providing multiple choices on how to play.
 
 ![Player Round Selection](/assets/media/player_round_selection.png)
 
 - __Player Choice__
 
- - This section allows the player to confirm their selection before proceeding and has a unique caption dependent on the choice that was picked. Once an option is selected the confirm choice button is displayed.
+  - This section allows the player to confirm their selection before proceeding and has a unique caption dependent on the choice that was picked. Once an option is selected the confirm choice button is displayed.
 
- - This allows the user more agency over how they would like to play and adds some fun flavouring with the captions.
+  - This allows the user more agency over how they would like to play and adds some fun flavouring with the captions.
 
 ![Player Choice](/assets/media/player_choice.png)
 
 - __Countdown and Computer Choice__
 
- - This section counts down from 3 once the user confirms their choice then confirms either a win, loss or draw and displays the computer's selection once the countdown is complete.
+  - This section counts down from 3 once the user confirms their choice then confirms either a win, loss or draw and displays the computer's selection once the countdown is complete.
 
- - This adds suspense for the user and confirms how their selection fares against the computer's selection.
+  - This adds suspense for the user and confirms how their selection fares against the computer's selection.
 
 ![Countdown and Computer Choice](/assets/media/countdown_and_computer_choice.png)
 
 - __Scores and Lives__
 
- - This section displays the user's current score count and their 'remaining lives' by changing the visuals after each loss. Once the player has lost a 3rd time, the game is over.
+  - This section displays the user's current score count and their 'remaining lives' by changing the visuals after each loss. Once the player has lost a 3rd time, the game is over.
 
- - This provides the user a sense of achievement with the score counter and adds difficulty by means of limited attempts before the game ends.
+  - This provides the user a sense of achievement with the score counter and adds difficulty by means of limited attempts before the game ends.
 
 ![Scores and Lives](/assets/media/scores_and_lives.png)
+
+- __Game Over__
+
+  - Once the user has lost 3 rounds this window displays their current score, confirms if a high score has been achieved, allows the user to input a 4 character name to display alongside their new high score and requests if the user would like to play again.
+
+  - This provides a summary of the game played for the user and enhances the sense of accomplishment if a high score is attained.
+
+![Game Over](/assets/media/game_over.png)
