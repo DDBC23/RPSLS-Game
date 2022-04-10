@@ -16,6 +16,8 @@ window.addEventListener("click", function dropDowns(event) {
 
     const dropdownContent = document.getElementsByClassName("dropdown-content");
     const gameArea = document.getElementById("game-area");
+    const highScoresWindow = document.getElementById("high-scores-window");
+    const rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
     gameArea.style.display = "block";
 
@@ -73,7 +75,6 @@ window.addEventListener("click", function dropDowns(event) {
 
     // rpsls rules window show or hide
     const rpslsRules = document.getElementById("rules");
-    const rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
     if (event.target === rpslsRules) {
         rpslsRulesWindow.style.display = "flex";
@@ -84,7 +85,6 @@ window.addEventListener("click", function dropDowns(event) {
 
     // high scores window show or hide
     const highScores = document.getElementById("high-scores");
-    const highScoresWindow = document.getElementById("high-scores-window");
 
     if (event.target === highScores) {
         highScoresWindow.style.display = "flex";

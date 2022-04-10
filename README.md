@@ -120,10 +120,10 @@ This site has additionally been tested through Chrome's inspection tools to iden
 - JavaScript
   - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
   - The following metrics were returned
-    - There are 27 functions in this file.
+    - There are 28 functions in this file.
     - Function with the largest signature take 1 arguments, while the median is 0.
-    - Largest function has 43 statements in it, while the median is 4.
-    - The most complex function has a cyclomatic complexity value of 29 while the median is 1.
+    - Largest function has 45 statements in it, while the median is 3.5.
+    - The most complex function has a cyclomatic complexity value of 29 while the median is 2.
   - The following warnings were returned
     - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (roundStart)
 
