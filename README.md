@@ -63,7 +63,7 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 - __Scores and Lives__
 
-  - This section displays the user's current score count and their 'remaining lives' by changing the visuals after each loss. Once the player has lost a 3rd time, the game is over.
+  - This section displays the user's current score count and their 'remaining lives' by changing the visuals after each loss. Once the player has lost a 3rd time, the game is over. If no lives mode is active, this will change to show no high scores are not enabled.
 
   - This provides the user a sense of achievement with the score counter and adds difficulty by means of limited attempts before the game ends.
 

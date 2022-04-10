@@ -8,7 +8,6 @@ let losses = 0;
 /** loads 3 lives mode once DOM finished loading */
 document.addEventListener("DOMContentLoaded", function () {
     threeLivesMode = true;
-    console.log(threeLivesMode);
     document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
 });
 
