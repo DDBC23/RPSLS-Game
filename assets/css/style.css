@@ -565,7 +565,7 @@ input {
     #game-area {
         width: 95vw;
         border: 0.5rem ridge #3a3a3a;
-        height: 30rem;
+        height: 28rem;
     }
 
     #header-buttons button {
@@ -580,12 +580,47 @@ input {
 
     .pop-window {
         border: 0.5rem ridge #3a3a3a;
-        height: 43.5rem;
+        height: 35rem;
     }
 
     #rpsls-rules-window img {
-        height: 65vw;
-        width: 65vw;
+        height: 60vw;
+        width: 60vw;
+    }
+
+    #rpsls-table th {
+        font-size: 1.25rem;
+    }
+
+    #rpsls-table td {
+        font-size: 0.8rem;
+        height: 1.25rem;
+    }
+
+    #high-scores-window {
+        align-content: initial;
+    }
+
+    #high-scores-window p {
+        margin-bottom: -1rem;
+    }
+
+    #rpsls-scores-table {
+        margin-bottom: -2rem;
+    }
+
+    .scores-category {
+        margin-bottom: 2rem;
+        height: 13rem;
+    }
+
+    .scores-category td {
+        font-size: 1rem;
+    }
+
+    .score-heading p {
+        margin-top: -3rem;
+        font-size: 1.25rem;
     }
 
     #game-over-window {
@@ -613,6 +648,7 @@ input {
     }
 
     #selections {
+        width: 6rem;
         margin: 1rem 0 0 1rem;
         font-size: 1rem;
         text-shadow: 0.09375rem 0.09375rem #3a3a3a;   
@@ -622,7 +658,8 @@ input {
         height: 6rem;
         width: 6rem;
         font-size: 1rem;
-        text-shadow: 0.09375rem 0.09375rem #3a3a3a;   
+        text-shadow: 0.09375rem 0.09375rem #3a3a3a;  
+        border: 0.25rem solid #3a3a3a; 
     }
 
     .choice-container img {
@@ -630,6 +667,12 @@ input {
         height: 5rem;
         width: 5rem;
         margin-bottom: 0.75rem;
+    }
+
+    .choice-container figcaption {
+        font-size: 0.85rem;
+        margin-top: -0.4rem;
+        text-align: center;
     }
 
     #game-countdown {
