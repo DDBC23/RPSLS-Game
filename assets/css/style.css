@@ -10,6 +10,7 @@ body {
     font-family: "Permanent marker", sans-serif;
     color: #edebeb;
     background-image: linear-gradient(to right, #845EC2, #589595, #225762);
+    background-color: #589595;
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -65,6 +66,10 @@ h3 {
     background-color: #225762;
 }
 
+#header-buttons button:focus {
+    background-color: #225762;
+}
+
 #header-buttons li {
     display: block;
 }
@@ -96,23 +101,32 @@ h3 {
     margin-top: 2rem;
     display: flex;
     justify-content: space-evenly;
+}
+
+.rpsls-selector {
+    background-color: transparent;
     color: #edebeb;
     font-size: 2rem;
     text-shadow: 0.1875rem 0.1875rem #3a3a3a;
     text-align: center;
+    font-family: "Permanent marker", sans-serif;
+}
+
+.rpsls-selector figcaption {
+    margin-top: -0.5rem;
 }
 
 .rpsls-selector:hover {
     transform: scale(1.2);
 }
 
+.rpsls-selector:focus {
+    transform: scale(1.2);
+}
+
 .rpsls-selector img {
     height: 9rem;
     width: 9rem;
-}
-
-.rpsls-selector figcaption {
-    margin-top: -1rem;
 }
 
 #selections {
@@ -232,7 +246,10 @@ h3 {
 
 #player-confirm:hover {
     background-color: #225762;
-    border: 0.3125rem solid #3a3a3a;
+}
+
+#player-confirm:focus {
+    background-color: #225762;
 }
 
 #header-buttons {
@@ -260,6 +277,10 @@ h3 {
 }
 
 .game-over-button:hover {
+    background-color: #225762;
+}
+
+.game-over-button:focus {
     background-color: #225762;
 }
 
@@ -466,7 +487,7 @@ input {
         width: 52vw;
     }
 
-    .rpsls-selector figcaption {
+    .rpsls-selector {
         font-size: 1.25rem;
     }
 
@@ -632,7 +653,7 @@ input {
     }
 
     #rpsls-selection {
-        margin-top: 2rem;
+        margin-top: 1rem;
         flex-flow: column wrap;
         float: left;
     }
@@ -646,7 +667,7 @@ input {
         width: 2.5rem;
     }
 
-    .rpsls-selector figcaption {
+    .rpsls-selector {
         font-size: 1rem;
         text-shadow: 0.09375rem 0.09375rem #3a3a3a;
     }

@@ -86,7 +86,7 @@
         <div class="pop-window" id="game-over-window">
             <h2>You scored:</h2>
             <h3>Great job!</h3>
-            <button class="game-over-button" id="new-game">Play again?</button>
+            <button tabindex="0" class="game-over-button" id="new-game">Play again?</button>
         </div>
         <div class="pop-window" id="high-scores-window">
             <div class="scores-category">
@@ -138,26 +138,36 @@
     <main id="game-area">
         <!-- rock paper scissors lizard spock game -->
         <div id="rpsls-selection">
-            <figure data-type="rock-selector" class="rpsls-selector">
+            <button data-type="rock-selector" class="rpsls-selector">
+            <figure>
                 <img src="assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Rock</figcaption>
             </figure>
-            <figure data-type="paper-selector" class="rpsls-selector">
+        </button>
+        <button data-type="paper-selector" class="rpsls-selector">
+            <figure>
                 <img src="assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Paper</figcaption>
             </figure>
-            <figure data-type="scissors-selector" class="rpsls-selector">
+        </button>
+        <button data-type="scissors-selector" class="rpsls-selector">
+            <figure>
                 <img src="assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Scissors</figcaption>
             </figure>
-            <figure data-type="lizard-selector" class="rpsls-selector">
+        </button>
+        <button data-type="lizard-selector" class="rpsls-selector">
+            <figure>
                 <img src="assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Lizard</figcaption>
             </figure>
-            <figure data-type="spock-selector" class="rpsls-selector">
+        </button>
+        <button data-type="spock-selector" class="rpsls-selector">
+            <figure>
                 <img src="assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Spock</figcaption>
             </figure>
+        </button>
         </div>
         <div id="selections">
             <figure id="player-selection" class="choice-container">

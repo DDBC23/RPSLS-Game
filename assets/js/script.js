@@ -97,27 +97,27 @@ function playerSelection() {
             if (this.getAttribute("data-type") === "rock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock them?</figcaption>
-                <button id="player-confirm">Confirm choice</button>`;
+                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
                 playerPick = "rock";
             } else if (this.getAttribute("data-type") === "paper-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Ready to wrap this up?</figcaption>
-                <button id="player-confirm">Confirm choice</button>`;
+                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
                 playerPick = "paper";
             } else if (this.getAttribute("data-type") === "scissors-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Will you make the cut?</figcaption>
-                <button id="player-confirm">Confirm choice</button>`;
+                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
                 playerPick = "scissors";
             } else if (this.getAttribute("data-type") === "lizard-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Ready to gecko-ing?</figcaption>
-                <button id="player-confirm">Confirm choice</button>`;
+                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
                 playerPick = "lizard";
             } else if (this.getAttribute("data-type") === "spock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Ready to Trek out?</figcaption>
-                <button id="player-confirm">Confirm choice</button>`;
+                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
                 playerPick = "spock";
             }
             playerSelected.setAttribute("data-type", playerPick);
@@ -427,15 +427,15 @@ function highScore() {
     var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
     let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
 
-    // checks if high score has been acheived
+    // checks if high score has been achieved
     if (endScore > rpslsHighScores[0]) {
 
         document.getElementById("game-over-window").innerHTML = `<h2>You scored: ${endScore}</h2>
         <h3>New High Score!</h3>
         <label>Enter Name</label>
-        <input type="text" name="new-score-name" maxlength="4" id="new-score-name">
-        <button class="game-over-button" id="submit-score">Submit</button>
-        <button style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
+        <input tabindex="0" type="text" name="new-score-name" maxlength="4" id="new-score-name">
+        <button tabindex="0" class="game-over-button" id="submit-score">Submit</button>
+        <button tabindex="0" style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
 
         document.getElementById("submit-score").addEventListener("click", function () {
             updateScore();
@@ -457,7 +457,7 @@ function highScore() {
             rpslsHighScores.pop();
             document.getElementById("rpsls-score-table").rows[2].cells[2].innerText = endScore;
 
-            rpslsScoreNames.unshift(newScoreName)
+            rpslsScoreNames.unshift(newScoreName);
             rpslsScoreNames.pop();
             document.getElementById("rpsls-score-table").rows[2].cells[1].innerHTML = newScoreName;
         } else if (endScore < rpslsHighScores[2]) {

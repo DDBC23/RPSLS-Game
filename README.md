@@ -93,3 +93,23 @@ This site features an adapative layout based on the user's screen size, 2 differ
  - Add visual animations for round win / draw / loss.
 
 ## Testing
+
+This site has been tested on a large screen desktop device, laptop and mobile device with no evident errors appearing for visual or functional purposes. 
+
+This site features multiple header buttons that will change appearance when hovered or focused
+
+### Validator Testing
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fddbc23.github.io%2FRPSLS-Game%2F)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fddbc23.github.io%2FRPSLS-Game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JavaScript
+  - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+    - __The following metrics were returned__
+    - There are 27 functions in this file.
+    - Function with the largest signature take 1 arguments, while the median is 0.
+    - Largest function has 43 statements in it, while the median is 4.
+    - The most complex function has a cyclomatic complexity value of 29 while the median is 1.
+    - __The following warnings were returned__
+    - 95: Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (roundStart)
