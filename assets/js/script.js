@@ -12,7 +12,7 @@ window.addEventListener("click", function dropDowns(event) {
 
     // hides all dropdown menu buttons
     if (!event.target.classList.contains("menu-button")) {
-        for (dropdown of dropdownContent) {
+        for (const dropdown of dropdownContent) {
             dropdown.style.display = "none";
         }
     }
@@ -62,7 +62,7 @@ window.addEventListener("click", function dropDowns(event) {
     } else if (event.target !== highScores) {
         highScoresWindow.style.display = "none";
     }
-})
+});
 
 /** resets the game area and global variables */
 function newGame() {
@@ -89,7 +89,7 @@ function playerSelection() {
 
     let playerChoices = document.getElementsByClassName("rpsls-selector");
 
-    for (const playerChoice of playerChoices) {
+    for (var playerChoice of playerChoices) {
         playerChoice.addEventListener("click", function () {
             let playerSelected = document.getElementById("player-selection");
             var playerPick = "";
@@ -122,7 +122,7 @@ function playerSelection() {
             }
             playerSelected.setAttribute("data-type", playerPick);
             roundStart();
-        })
+        });
     }
 }
 
@@ -134,23 +134,23 @@ function roundStart() {
 
         let playerChoices = document.getElementsByClassName("rpsls-selector");
         this.remove();
-        let roundChoices = document.getElementById("selections")
+        let roundChoices = document.getElementById("selections");
 
-        let choices = roundChoices.getElementsByClassName("choice-container")
-        for (i = 0; i < choices.length; i++) {
+        let choices = roundChoices.getElementsByClassName("choice-container");
+        for (let i = 0; i < choices.length; i++) {
             choices[i].style.transform = "scale(1.2)";
         }
 
         let choiceTags = roundChoices.getElementsByTagName("figcaption");
-        for (i = 0; i < choiceTags.length; i++) {
+        for (let i = 0; i < choiceTags.length; i++) {
             choiceTags[i].style.display = "none";
         }
 
-        for (i = 0; i < playerChoices.length; i++) {
+        for (let i = 0; i < playerChoices.length; i++) {
             playerChoices[i].style.display = "none";
         }
         roundCountdown();
-    })
+    });
 }
 
 /** starts and displays countdown timer when round begins */
@@ -213,70 +213,74 @@ function checkWinner() {
     let player = document.getElementById("player-selection").getAttribute("data-type");
     let computer = document.getElementById("computer-selection").getAttribute("data-type");
 
+    var win = false;
+    var draw = false;
+    var loss = false;
+
     // player picked rock
     if (player === "rock") {
         if (computer === "scissors") {
-            var win = true;
+            win = true;
         } else if (computer === "lizard") {
-            var win = true;
+            win = true;
         } else if (computer === "paper") {
-            var loss = true;
+            loss = true;
         } else if (computer === "spock") {
-            var loss = true;
+            loss = true;
         } else {
-            var draw = true;
+            draw = true;
         }
         // player picked paper
     } else if (player === "paper") {
         if (computer === "rock") {
-            var win = true;
+            win = true;
         } else if (computer === "spock") {
-            var win = true;
+            win = true;
         } else if (computer === "scissors") {
-            var loss = true;
+            loss = true;
         } else if (computer === "lizard") {
-            var loss = true;
+            loss = true;
         } else {
-            var draw = true;
+            draw = true;
         }
         // player picked scissors
     } else if (player === "scissors") {
         if (computer === "paper") {
-            var win = true;
+            win = true;
         } else if (computer === "lizard") {
-            var win = true;
+            win = true;
         } else if (computer === "rock") {
-            var loss = true;
+            loss = true;
         } else if (computer === "spock") {
-            var loss = true;
+            loss = true;
         } else {
-            var draw = true;
+            draw = true;
         }
         // player picked lizard
     } else if (player === "lizard") {
         if (computer === "paper") {
-            var win = true;
+            win = true;
         } else if (computer === "spock") {
-            var win = true;
+            win = true;
         } else if (computer === "rock") {
-            var loss = true;
+            loss = true;
         } else if (computer === "scissors") {
-            var loss = true;
+            loss = true;
         } else {
-            var draw = true;
+            draw = true;
         }
         // player picked spock
     } else if (player === "spock") {
         if (computer === "rock") {
-            var win = true;
+            win = true;
         } else if (computer === "scissors") {
-            var win = true;
+            win = true;
         } else if (computer === "paper") {
-            var loss = true;
+            loss = true;
         } else if (computer === "lizard") {
-            var loss = true;
+            loss = true;
         } else {
-            var draw = true;
+            draw = true;
         }
     }
 
@@ -353,13 +357,13 @@ function roundReset() {
     // resets selections styling
     let roundChoices = document.getElementById("selections");
 
-    let choices = roundChoices.getElementsByClassName("choice-container")
-    for (i = 0; i < choices.length; i++) {
+    let choices = roundChoices.getElementsByClassName("choice-container");
+    for (let i = 0; i < choices.length; i++) {
         choices[i].style.transform = "scale(1)";
     }
 
     let choiceTags = roundChoices.getElementsByTagName("figcaption");
-    for (i = 0; i < choiceTags.length; i++) {
+    for (let i = 0; i < choiceTags.length; i++) {
         choiceTags[i].style.display = "block";
     }
 
@@ -375,7 +379,7 @@ function roundReset() {
     // resets rpsls-selector styling
     let playerChoices = document.getElementsByClassName("rpsls-selector");
 
-    for (i = 0; i < playerChoices.length; i++) {
+    for (let i = 0; i < playerChoices.length; i++) {
         playerChoices[i].style.display = "block";
     }
 
@@ -405,7 +409,7 @@ function gameOver() {
         document.getElementById("game-area").style.display = "block";
         gameOverWindow.removeAttribute("data-type");
         newGame();
-    })
+    });
 }
 
 /** verifies if high score acheived, updates high score and allows name input */
@@ -435,7 +439,7 @@ function highScore() {
 
         document.getElementById("submit-score").addEventListener("click", function () {
             updateScore();
-        })
+        });
     }
 
     /** updates high scores */

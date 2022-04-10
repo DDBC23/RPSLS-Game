@@ -83,3 +83,13 @@ This site features an adapative layout based on the user's screen size, 2 differ
   - This provides a summary of the game played for the user and enhances the sense of accomplishment if a high score is attained.
 
 ![Game Over](/assets/media/game_over.png)
+
+### Features Left to Implement
+
+ - Add an 'unlimited lives' mode.
+
+ - Add music and sound effects with the option to be toggled off.
+
+ - Add visual animations for round win / draw / loss.
+
+## Testing

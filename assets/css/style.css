@@ -103,7 +103,7 @@ h3 {
 }
 
 .rpsls-selector:hover {
-    transform: scale(120%);
+    transform: scale(1.2);
 }
 
 .rpsls-selector img {
