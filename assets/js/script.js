@@ -21,6 +21,8 @@ window.addEventListener("click", function dropDowns(event) {
 
     if (document.getElementById("game-over-window").hasAttribute("data-type")) {
         gameArea.style.display = "none";
+        highScoresWindow.style.display = "none";
+        gameArea.style.display = "none";
     }
 
     // hides all dropdown menu buttons
@@ -102,6 +104,7 @@ function playerSelection() {
             let playerSelected = document.getElementById("player-selection");
             var playerPick = "";
 
+            // changes player choice based on option selected
             if (this.getAttribute("data-type") === "rock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock them?</figcaption>
@@ -134,13 +137,13 @@ function playerSelection() {
     }
 }
 
-/** player choice confirmation and round start */
+/** removes player confirm button and changes enlarges choice containers */
 function roundStart() {
 
     document.getElementById("player-confirm").addEventListener("click", function (event) {
+        this.remove();
 
         let playerChoices = document.getElementsByClassName("rpsls-selector");
-        this.remove();
         let roundChoices = document.getElementById("selections");
 
         let choices = roundChoices.getElementsByClassName("choice-container");
@@ -302,6 +305,7 @@ function checkWinner() {
         playerDraw();
     }
 
+    // removes data type for next rounds
     document.getElementById("player-selection").removeAttribute("data-type");
     document.getElementById("computer-selection").removeAttribute("data-type");
 }
@@ -309,6 +313,7 @@ function checkWinner() {
 /** updates score, displays winner message and calls roundReset function */
 function playerWin() {
 
+    // increases score count if three lives mode enabled
     if (threeLivesMode) {
         let score = document.getElementById("score");
         var newScore = parseInt(score.innerText);
@@ -390,7 +395,7 @@ function roundReset() {
     }
 
     if (threeLivesMode) {
-        if (losses < 4 === true) {
+        if (losses < 4) {
             playerSelection();
         }
     }
@@ -408,14 +413,13 @@ function gameOver() {
 
     let endScore = document.getElementById("score").innerText;
     let gameOverWindow = document.getElementById("game-over-window");
-
+    
+    // displays game over window and game end score
     gameOverWindow.style.display = "flex";
     gameOverWindow.setAttribute("data-type", "active");
     gameOverWindow.getElementsByTagName("h2")[0].innerHTML = `You scored: ${endScore}`;
 
-    let startNewGame = document.getElementById("new-game");
-
-    startNewGame.addEventListener("click", function () {
+    document.getElementById("new-game").addEventListener("click", function () {
         document.getElementById("game-area").style.display = "block";
         gameOverWindow.removeAttribute("data-type");
         newGame();
@@ -443,10 +447,16 @@ function highScore() {
 
     let endScore = parseInt(document.getElementById("score").innerText);
 
+    // declares variables for high scores and names
     var rpslsFirstScore = document.getElementById("rpsls-score-table").rows[0].cells[2].innerText;
     var rpslsSecondScore = document.getElementById("rpsls-score-table").rows[1].cells[2].innerText;
     var rpslsThirdScore = document.getElementById("rpsls-score-table").rows[2].cells[2].innerText;
-    var rpslsHighScores = [parseInt(rpslsFirstScore), parseInt(rpslsSecondScore), parseInt(rpslsThirdScore)].reverse();
+    let rpslsHighScores = [parseInt(rpslsFirstScore), parseInt(rpslsSecondScore), parseInt(rpslsThirdScore)].reverse();
+
+    var rpslsFirstName = document.getElementById("rpsls-score-table").rows[0].cells[1].innerText;
+    var rpslsSecondName = document.getElementById("rpsls-score-table").rows[1].cells[1].innerText;
+    var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
+    let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
 
     // checks if high score has been achieved
     if (endScore > rpslsHighScores[0]) {
@@ -463,7 +473,7 @@ function highScore() {
         });
     }
 
-    /** updates high scores */
+    /** updates high scores and names */
     function updateScore() {
 
         var newScoreName = document.getElementById("new-score-name").value;
@@ -472,7 +482,8 @@ function highScore() {
         document.getElementsByTagName("label")[0].style.display = "none";
         document.getElementById("submit-score").style.display = "none";
         document.getElementById("new-game").style.display = "block";
-
+        
+        // designates which high score to be updated
         if (endScore < rpslsHighScores[1]) {
             rpslsHighScores.unshift(endScore);
             rpslsHighScores.pop();

@@ -1,5 +1,11 @@
 # RPSLS-Game
 
+RPSLS (or rock, paper, scissors, lizard, Spock) is a simple and enjoyable game where the user can compete against a computer opponent in a game of chance. 
+
+This site features an adapative layout based on the user's screen size, 2 different game modes which both use a '3 lives' system and a high scores system which the player can set out to achieve and gain bragging rights over their friends!
+
+![Responsive Mockup](/assets/media/responsive_design.png)
+
 [Go to Features](#existing-features)
 - [Go to Menu Bar](#menu-and-pop-out-windows)
 - [Go to Game Area](#game-area)
@@ -8,16 +14,11 @@
 
 [Go to Testing](#testing)
 - [Go to Validator Testing](#validator-testing)
+- [Go to Unfixed Bugs](#unfixed-bugs)
 
 [Go to Deployment](#deployment)
 
 [Go to Credits](#credits)
-
-RPSLS (or rock, paper, scissors, lizard, Spock) is a simple and enjoyable game where the user can compete against a computer opponent in a game of chance. 
-
-This site features an adapative layout based on the user's screen size, 2 different game modes which both use a '3 lives' system and a high scores system which the player can set out to achieve and gain bragging rights over their friends!
-
-![Responsive Mockup](/assets/media/responsive_design.png)
 
 ## Features
 
@@ -125,6 +126,11 @@ This site has additionally been tested through Chrome's inspection tools to iden
     - The most complex function has a cyclomatic complexity value of 29 while the median is 1.
   - The following warnings were returned
     - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (roundStart)
+
+### Unfixed Bugs
+
+- Cannot display rules window or high scores while game over window is active without showing multiple windows.
+- If game mode is changed during countdown then display changes but countdown proceeds.
 
 ## Deployment
 
