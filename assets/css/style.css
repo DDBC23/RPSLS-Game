@@ -47,7 +47,6 @@ h3 {
 #header-buttons {
     display: flex;
     justify-content: space-evenly;
-    align-content: stretch;
 }
 
 #header-buttons button {
@@ -239,7 +238,6 @@ h3 {
 #header-buttons {
     display: flex;
     justify-content: space-evenly;
-    align-content: stretch;
 }
 
 #game-over-window {
@@ -545,12 +543,7 @@ input {
 
 @media screen and (max-width: 480px) {
 
-    body {
-        max-width: 100%;
-    }
-
     h1 {
-        margin-top: 0;
         font-size: 1.5rem;
         text-decoration: none;
         margin: 0 10%;
@@ -570,11 +563,10 @@ input {
         width: 95vw;
         box-sizing: border-box;
         border: 0.5rem ridge #3a3a3a;
-        height: 28rem;
+        height: 29rem;
     }
 
     #header-buttons button {
-        position: static;
         font-size: 0.85rem;
         text-shadow: 0.09375rem 0.09375rem #3a3a3a;
         width: 30vw;
