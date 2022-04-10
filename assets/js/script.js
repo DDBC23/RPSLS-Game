@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     threeLivesMode = true;
     console.log(threeLivesMode);
     document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
-})
+});
 
 /** shows or hides dropdown buttons and pop out windows based on event target */
 window.addEventListener("click", function dropDowns(event) {
@@ -99,21 +99,12 @@ function newGame() {
     document.getElementById("game-area").style.display = "block";
     document.getElementById("game-name").style.display = "block";
 
-    if (threeLivesMode) {
-
-
-
-        let livesBox = document.getElementsByClassName("lives-box");
-        for (let i = 0; i < livesBox.length; i++) {
-            livesBox[i].style.backgroundColor = "#edebeb";
-        }
+    let livesBox = document.getElementsByClassName("lives-box");
+    for (let i = 0; i < livesBox.length; i++) {
+        livesBox[i].style.backgroundColor = "#edebeb";
 
         document.getElementById("score").innerText = 0;
         losses = 0;
-    }
-
-    if (noLivesMode) {
-
     }
 
     roundReset();
@@ -337,11 +328,13 @@ function checkWinner() {
 /** updates score, displays winner message and calls roundReset function */
 function playerWin() {
 
-    let score = document.getElementById("score");
-    var newScore = parseInt(score.innerText);
+    if (threeLivesMode) {
+        let score = document.getElementById("score");
+        var newScore = parseInt(score.innerText);
 
-    newScore++;
-    score.innerText = newScore;
+        newScore++;
+        score.innerText = newScore;
+    }
 
     document.getElementById("game-countdown").innerHTML = `<p>Winner!</p>`;
 
@@ -401,8 +394,6 @@ function roundReset() {
         choiceTags[i].style.display = "block";
     }
 
-    roundChoices.style.transform = "scale(1)";
-
     // resets selections images and captions
     document.getElementById("player-selection").innerHTML = `<img src="assets/images/question_mark.jpg" alt="question mark icon">
     <figcaption>Make your choice!</figcaption>`;
@@ -417,15 +408,19 @@ function roundReset() {
         playerChoices[i].style.display = "block";
     }
 
-    if (losses < 4 === true) {
-        playerSelection();
+    if (threeLivesMode) {
+        if (losses < 4 === true) {
+            playerSelection();
+        }
     }
 }
 
 /** ends current game, displays game score and calls newGame function */
 function gameOver() {
 
-    highScore();
+    if (threeLivesMode) {
+        highScore();
+    }
 
     document.getElementById("game-area").style.display = "none";
     document.getElementById("game-name").style.display = "none";
