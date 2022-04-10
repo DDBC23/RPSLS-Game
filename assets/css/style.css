@@ -11,7 +11,6 @@ body {
     color: #edebeb;
     background-image: linear-gradient(to right, #845EC2, #589595, #225762);
     height: 100%;
-    margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -546,6 +545,10 @@ input {
 
 @media screen and (max-width: 480px) {
 
+    body {
+        max-width: 100%;
+    }
+
     h1 {
         margin-top: 0;
         font-size: 1.5rem;
@@ -564,6 +567,7 @@ input {
     }
 
     #game-area {
+        box-sizing: border-box;
         width: 95vw;
         border: 0.5rem ridge #3a3a3a;
         height: 28rem;
@@ -580,8 +584,10 @@ input {
     }
 
     .pop-window {
-        border: 0.5rem ridge #3a3a3a;
+        box-sizing: border-box;
+        width: 95vw;
         height: 35rem;
+        border: 0.5rem ridge #3a3a3a;
     }
 
     #rpsls-rules-window img {
@@ -692,6 +698,8 @@ input {
     }
 
     .lives-box {
+        height: 1.25rem;
+        width: 1.25rem;
         margin: 0 0.25rem;
     }
 
