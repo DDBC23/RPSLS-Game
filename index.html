@@ -21,7 +21,7 @@
                     <button id="modes" class="menu-button"> Game Modes </button>
                     <div class="dropdown-content" id="game-drop-content">
                         <div>
-                            <button id="rpsls-mode">3 Lives</button>
+                            <button id="three-lives-mode">3 Lives</button>
                         </div>
                         <div>
                             <button id="no-lives-mode">No Lives</button>
@@ -151,7 +151,7 @@
                 <figcaption>What could it be...</figcaption>
             </figure>
         </div>
-        <div class="scores-and-lives">
+        <div id="three-lives-score" class="scores-and-lives">
             <p>Score: <span id="score">0</span></p>
             <p id="lives-left">Lives Left</p>
             <div id="lives-boxes">
@@ -163,8 +163,8 @@
                 </div>
             </div>
         </div>
-        <!-- rock paper scissors game -->
-        <div>
+        <div id="no-lives-score" class="scores-and-lives">
+            <p>Scores are not<br> enabled in<br> this mode</p>
         </div>
     </main>
     <script src="assets/js/script.js"></script>

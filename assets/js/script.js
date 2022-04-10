@@ -1,3 +1,17 @@
+// global variables
+
+let threeLivesMode = false;
+let noLivesMode = false;
+let losses = 0;
+
+
+/** loads 3 lives mode once DOM finished loading */
+document.addEventListener("DOMContentLoaded", function () {
+    threeLivesMode = true;
+    console.log(threeLivesMode);
+    document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
+})
+
 /** shows or hides dropdown buttons and pop out windows based on event target */
 window.addEventListener("click", function dropDowns(event) {
 
@@ -29,13 +43,40 @@ window.addEventListener("click", function dropDowns(event) {
         gameModeList.style.display = "none";
     }
 
+    // allows player to select game mode
+    const threeLivesButton = document.getElementById("three-lives-mode");
+    const noLivesButton = document.getElementById("no-lives-mode");
+    let threeLivesScore = document.getElementById("three-lives-score");
+    let noLivesScore = document.getElementById("no-lives-score");
+
+    if (event.target === threeLivesButton) {
+
+        if (threeLivesMode === false) {
+            newGame();
+            threeLivesScore.style.display = "block";
+        }
+        noLivesScore.style.display = "none";
+        threeLivesMode = true;
+        noLivesMode = false;
+
+    } else if (event.target === noLivesButton) {
+
+        if (noLivesMode === false) {
+            newGame();
+            noLivesScore.style.display = "block";
+        }
+        threeLivesScore.style.display = "none";
+        noLivesMode = true;
+        threeLivesMode = false;
+    }
+
     // rpsls rules window show or hide
     const rpslsRules = document.getElementById("rules");
     const rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
     if (event.target === rpslsRules) {
         rpslsRulesWindow.style.display = "flex";
-        gameArea.style.display ="none";
+        gameArea.style.display = "none";
     } else if (event.target !== rpslsRules) {
         rpslsRulesWindow.style.display = "none";
     }
@@ -58,19 +99,26 @@ function newGame() {
     document.getElementById("game-area").style.display = "block";
     document.getElementById("game-name").style.display = "block";
 
-    let livesBox = document.getElementsByClassName("lives-box");
-    for (let i = 0; i < livesBox.length; i++) {
-        livesBox[i].style.backgroundColor = "#edebeb";
+    if (threeLivesMode) {
+
+
+
+        let livesBox = document.getElementsByClassName("lives-box");
+        for (let i = 0; i < livesBox.length; i++) {
+            livesBox[i].style.backgroundColor = "#edebeb";
+        }
+
+        document.getElementById("score").innerText = 0;
+        losses = 0;
     }
 
-    document.getElementById("score").innerText = 0;
-    losses = 0;
+    if (noLivesMode) {
+
+    }
 
     roundReset();
 
 }
-
-document.getElementById("rpsls-selection").addEventListener("click", playerSelection());
 
 /**changes player choice to selected option and creates confirm button */
 function playerSelection() {
@@ -114,7 +162,6 @@ function playerSelection() {
     }
 }
 
-
 /** player choice confirmation and round start */
 function roundStart() {
 
@@ -141,6 +188,7 @@ function roundStart() {
     });
 }
 
+// setTimeout code credit available in readme
 /** starts and displays countdown timer when round begins */
 function roundCountdown() {
 
@@ -311,8 +359,6 @@ function playerDraw() {
         roundReset();
     }, 2000);
 }
-
-let losses = 0;
 
 /** updates lives boxes and calls either roundReset or gameOver function*/
 function playerLoss() {

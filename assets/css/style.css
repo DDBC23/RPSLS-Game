@@ -172,6 +172,12 @@ h3 {
     text-shadow: 0.1875rem 0.1875rem #3a3a3a;
 }
 
+#no-lives-score {
+    display: none;
+    /* align-content: center;
+    text-align: center; */
+}
+
 #lives-boxes {
     display: flex;
     align-items: center;
@@ -703,6 +709,11 @@ input {
         right: 1.5rem;
         font-size: 1.25rem;
         margin: 7rem 0 0;
+    }
+
+    #no-lives-score {
+        margin-top: 10rem;
+        font-size: 0.9rem;
     }
 
     #lives-left {
