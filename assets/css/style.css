@@ -688,9 +688,14 @@ input {
     }
 
     .scores-and-lives {
-        float: right;
+        position: absolute;
+        right: 1.5rem;
         font-size: 1.25rem;
-        margin: 11.5rem 0 0;
+        margin: 7rem 0 0;
+    }
+
+    #lives-left {
+        margin-top: 7rem;
     }
 
     .lives-box {
