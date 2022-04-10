@@ -28,7 +28,6 @@ nav {
 }
 
 h1 {
-    position: static;
     margin-top: 4rem;
     font-size: 3rem;
     text-decoration: underline;
@@ -416,7 +415,6 @@ input {
 @media screen and (max-width: 767px) {
 
     h1 {
-        margin-top: 1rem;
         font-size: 1.75rem;
         text-decoration: none;
     }
@@ -565,16 +563,19 @@ input {
     }
 
     #game-area {
+        width: 95vw;
         border: 0.5rem ridge #3a3a3a;
-        height: 43.5rem;
+        height: 30rem;
     }
 
     #header-buttons button {
+        position: static;
         font-size: 1rem;
         text-shadow: 0.09375rem 0.09375rem #3a3a3a;
         width: 33vw;
         height: 2rem;
         border: 0.15625rem solid #3a3a3a;
+        z-index: 10;
     }
 
     .pop-window {
@@ -592,16 +593,18 @@ input {
     }
 
     #rpsls-selection {
-        flex-flow: row wrap;
+        margin-top: 2rem;
+        flex-flow: column wrap;
+        float: left;
     }
 
     .rpsls-selector {
-        margin: 0.25rem 1rem;
+        margin: 0.75rem 0.25rem;
     }
 
     .rpsls-selector img {
-        height: 4rem;
-        width: 4rem;
+        height: 2.5rem;
+        width: 2.5rem;
     }
 
     .rpsls-selector figcaption {
@@ -651,6 +654,6 @@ input {
     }
 
     #computer-selection {
-        margin-top: 3rem;
+        margin-top: 1.5rem;
     }
 }
