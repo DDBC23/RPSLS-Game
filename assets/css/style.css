@@ -567,25 +567,25 @@ input {
     }
 
     #game-area {
-        box-sizing: border-box;
         width: 95vw;
+        box-sizing: border-box;
         border: 0.5rem ridge #3a3a3a;
         height: 28rem;
     }
 
     #header-buttons button {
         position: static;
-        font-size: 1rem;
+        font-size: 0.85rem;
         text-shadow: 0.09375rem 0.09375rem #3a3a3a;
-        width: 33vw;
+        width: 30vw;
         height: 2rem;
         border: 0.15625rem solid #3a3a3a;
         z-index: 10;
     }
 
     .pop-window {
-        box-sizing: border-box;
         width: 95vw;
+        box-sizing: border-box;
         height: 35rem;
         border: 0.5rem ridge #3a3a3a;
     }
@@ -602,6 +602,7 @@ input {
     #rpsls-table td {
         font-size: 0.8rem;
         height: 1.25rem;
+        border: 0.225rem solid #3a3a3a;
     }
 
     #high-scores-window {
@@ -623,6 +624,7 @@ input {
 
     .scores-category td {
         font-size: 1rem;
+        border: 0.225rem solid #3a3a3a;
     }
 
     .score-heading p {
