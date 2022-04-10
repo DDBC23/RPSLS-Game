@@ -366,9 +366,9 @@ function roundReset() {
     roundChoices.style.transform = "scale(1)";
 
     // resets selections images and captions
-    document.getElementById("player-selection").innerHTML = `<img src="assets/images/question-mark.jpg" alt="question mark icon">
+    document.getElementById("player-selection").innerHTML = `<img src="assets/images/question_mark.jpg" alt="question mark icon">
     <figcaption>Make your choice!</figcaption>`;
-    document.getElementById("computer-selection").innerHTML = `<img src="assets/images/question-mark.jpg" alt="question mark icon">
+    document.getElementById("computer-selection").innerHTML = `<img src="assets/images/question_mark.jpg" alt="question mark icon">
     <figcaption>What could it be...</figcaption>`;
     document.getElementById("game-countdown").innerHTML = `<p>vs.</p>`;
 

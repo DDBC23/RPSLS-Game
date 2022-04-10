@@ -560,7 +560,7 @@ input {
     }
 
     #game-area {
-        width: 94vw;
+        width: 93.5vw;
         box-sizing: border-box;
         border: 0.5rem ridge #3a3a3a;
         height: 29rem;
