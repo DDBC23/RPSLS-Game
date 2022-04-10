@@ -172,10 +172,6 @@ h3 {
     text-shadow: 0.1875rem 0.1875rem #3a3a3a;
 }
 
-#lives-left {
-    margin-top: 0.5rem;
-}
-
 #lives-boxes {
     display: flex;
     align-items: center;
@@ -306,9 +302,7 @@ input {
 
 #high-scores-window {
     display: none;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-content: center;
+    margin: 0 auto;
 }
 
 .scores-category {
@@ -615,10 +609,6 @@ input {
         font-size: 0.8rem;
         height: 1.25rem;
         border: 0.225rem solid #3a3a3a;
-    }
-
-    #high-scores-window {
-        align-content: initial;
     }
 
     #high-scores-window p {

@@ -9,7 +9,7 @@
     <meta name="keywords" content="rock, paper, scissors, lizard, spock, rps game, rpsls game">
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'/>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <title>Rock, Paper, Scissors, Lizard, Spock Game</title>
 </head>
 
@@ -21,23 +21,15 @@
                     <button id="modes" class="menu-button"> Game Modes </button>
                     <div class="dropdown-content" id="game-drop-content">
                         <div>
-                            <button id="rpsls-mode">RPSLS</button>
+                            <button id="rpsls-mode">3 Lives</button>
                         </div>
                         <div>
-                            <button id="rps-mode">RPS</button>
+                            <button id="no-lives-mode">No Lives</button>
                         </div>
                     </div>
                 </li>
                 <li class="menu-button">
                     <button id="rules" class="menu-button"> Rules </button>
-                    <div class="dropdown-content" id="rules-drop-content">
-                        <div>
-                            <button class="rpsls-rules-area" id="rpsls-rules">RPSLS</button>
-                        </div>
-                        <div>
-                            <button id="rps-rules">RPS</button>
-                        </div>
-                    </div>
                 </li>
                 <li>
                     <button id="high-scores"> High Scores </button>
@@ -82,7 +74,6 @@
                 </tr>
             </table>
         </div>
-        <div class="pop-window" id="rps-rules-window"></div>
         <div class="pop-window" id="game-over-window">
             <h2>You scored:</h2>
             <h3>Great job!</h3>
@@ -91,31 +82,9 @@
         <div class="pop-window" id="high-scores-window">
             <div class="scores-category">
                 <div class="score-heading">
-                    <p>RPSLS Scores</p>
+                    <p>High Scores</p>
                 </div>
                 <table id="rpsls-score-table">
-                    <tr>
-                        <td class="table-category">1st</td>
-                        <td>DDBC</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td class="table-category">2nd</td>
-                        <td>TREE</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td class="table-category">3rd</td>
-                        <td>MERT</td>
-                        <td>9</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="rps-scores" class="scores-category">
-                <div class="score-heading">
-                    <p>RPS Scores</p>
-                </div>
-                <table id="rps-score-table">
                     <tr>
                         <td class="table-category">1st</td>
                         <td>DDBC</td>
@@ -139,35 +108,35 @@
         <!-- rock paper scissors lizard spock game -->
         <div id="rpsls-selection">
             <button data-type="rock-selector" class="rpsls-selector">
-            <figure>
-                <img src="assets/images/rock.jpg" alt="icon for rock">
-                <figcaption>Rock</figcaption>
-            </figure>
-        </button>
-        <button data-type="paper-selector" class="rpsls-selector">
-            <figure>
-                <img src="assets/images/paper.jpg" alt="icon for paper">
-                <figcaption>Paper</figcaption>
-            </figure>
-        </button>
-        <button data-type="scissors-selector" class="rpsls-selector">
-            <figure>
-                <img src="assets/images/scissors.jpg" alt="icon for scissors">
-                <figcaption>Scissors</figcaption>
-            </figure>
-        </button>
-        <button data-type="lizard-selector" class="rpsls-selector">
-            <figure>
-                <img src="assets/images/lizard.jpg" alt="icon for lizard">
-                <figcaption>Lizard</figcaption>
-            </figure>
-        </button>
-        <button data-type="spock-selector" class="rpsls-selector">
-            <figure>
-                <img src="assets/images/spock.jpg" alt="icon for Spock">
-                <figcaption>Spock</figcaption>
-            </figure>
-        </button>
+                <figure>
+                    <img src="assets/images/rock.jpg" alt="icon for rock">
+                    <figcaption>Rock</figcaption>
+                </figure>
+            </button>
+            <button data-type="paper-selector" class="rpsls-selector">
+                <figure>
+                    <img src="assets/images/paper.jpg" alt="icon for paper">
+                    <figcaption>Paper</figcaption>
+                </figure>
+            </button>
+            <button data-type="scissors-selector" class="rpsls-selector">
+                <figure>
+                    <img src="assets/images/scissors.jpg" alt="icon for scissors">
+                    <figcaption>Scissors</figcaption>
+                </figure>
+            </button>
+            <button data-type="lizard-selector" class="rpsls-selector">
+                <figure>
+                    <img src="assets/images/lizard.jpg" alt="icon for lizard">
+                    <figcaption>Lizard</figcaption>
+                </figure>
+            </button>
+            <button data-type="spock-selector" class="rpsls-selector">
+                <figure>
+                    <img src="assets/images/spock.jpg" alt="icon for Spock">
+                    <figcaption>Spock</figcaption>
+                </figure>
+            </button>
         </div>
         <div id="selections">
             <figure id="player-selection" class="choice-container">

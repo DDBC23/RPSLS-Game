@@ -14,7 +14,8 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 - __Menu Bar__
 
-  - The menu bar allows the user to navigate between different game modes, review rules for each mode and display the current high scores for both game mode using a drop-down style display with a hover visual effect and creates a pop out window for the selected choice.
+  - The menu bar allows the user to navigate between different game modes, review the rules for the game display the current high scores for using a drop-down style display with a hover visual effect and creates a pop out window for the selected choice.
+
   - This section allows for simple access to information without the need to redirect to multiple pages.
 
 ![Menu Bar](/assets/media/menu_bar.png)
@@ -28,21 +29,13 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 - __High Scores__
 
-  - This pop up window allows the user to check the top 3 scores for each game mode and has prepopulated information which is replaced once the user achieves a high score. This window is hidden once the user clicks anywhere on the screen.
+  - This pop up window allows the user to check the top 3 scores and has prepopulated information which is replaced once the user achieves a high score. This window is hidden once the user clicks anywhere on the screen.
 
   - This gives the user a goal to aim for and a sense of achievement for any high scores attained.
 
 ![High Scores](/assets/media/high_scores.png)
 
 #### __Game Area__
-
-- __Game Title__
-
-  - The game title clearly states the current game mode being played to the user and updates based on the player's selection.
-
-  - This section helps reaffirm the player's choice of game mode.
-
-![Game Title](/assets/media/game_title.png)
 
 - __Player Round Selection__
 
@@ -86,7 +79,7 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 ### Features Left to Implement
 
- - Add an 'unlimited lives' mode.
+ - Add rock paper scissors mode.
 
  - Add music and sound effects with the option to be toggled off.
 
@@ -96,7 +89,13 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 This site has been tested on a large screen desktop device, laptop and mobile device with no evident errors appearing for visual or functional purposes. 
 
-This site features multiple header buttons that will change appearance when hovered or focused
+This site features multiple header buttons and a drop down menu that will change appearance when hovered or focused and either show or hide pop up windows based on the user's interaction. These have all been found to be fully functional at all tested screen sizes without any evident errors.
+
+The game functionality includes showing, hiding or updating elements through scripts which are all operating as intended and is able to correctly track scores to compare against the existing high scores.
+
+This site has additionally been tested through Chrome's inspection tools to identify breakpoints on various viewing sizes and run through the Google Lighthouse testing system for both desktop and mobile.
+
+![Google Lighthouse Results](/assets/media/lighthouse.png)
 
 ### Validator Testing
 
@@ -106,10 +105,29 @@ This site features multiple header buttons that will change appearance when hove
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fddbc23.github.io%2FRPSLS-Game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
   - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
-    - __The following metrics were returned__
+  - The following metrics were returned
     - There are 27 functions in this file.
     - Function with the largest signature take 1 arguments, while the median is 0.
     - Largest function has 43 statements in it, while the median is 4.
     - The most complex function has a cyclomatic complexity value of 29 while the median is 1.
-    - __The following warnings were returned__
-    - 95: Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (roundStart)
+  - The following warnings were returned
+    - Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (roundStart)
+
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+ - In the GitHub repository, navigate to the Settings tab
+ - From the General section, navigate to 'Pages' under the Code and automation heading
+ - Select Main from the drop-down Branch menu and press save
+ - Once saved the page will be refreshed and advise that the site is ready to be deployed and provide a URL for the page
+ - Refresh this page after a few minutes and a green background and confirmation tick will advise the site has been deployed successfully.
+
+ ## Credits
+
+ ### Code
+
+ - setTimeout code guidance provided by [Jessica Wilkins](https://www.freecodecamp.org/news/javascript-settimeout-js-timer-to-delay-n-seconds/)
+
+ ### Media
+
+ - Game icons provided by [Icon Library](https://icon-library.com/)

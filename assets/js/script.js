@@ -17,18 +17,6 @@ window.addEventListener("click", function dropDowns(event) {
         }
     }
 
-    // rules dropdown show or hide
-    const rulesList = document.getElementById("rules-drop-content");
-    const rulesButton = document.getElementById("rules");
-
-    if (event.target === rulesButton) {
-        if (rulesList.style.display !== "block") {
-            rulesList.style.display = "block";
-        }
-    } else if (event.target !== rulesButton) {
-        rulesList.style.display = "none";
-    }
-
     // modes dropdown show or hide
     const gameModeList = document.getElementById("game-drop-content");
     const modesButton = document.getElementById("modes");
@@ -42,7 +30,7 @@ window.addEventListener("click", function dropDowns(event) {
     }
 
     // rpsls rules window show or hide
-    const rpslsRules = document.getElementById("rpsls-rules");
+    const rpslsRules = document.getElementById("rules");
     const rpslsRulesWindow = document.getElementById("rpsls-rules-window");
 
     if (event.target === rpslsRules) {
@@ -97,27 +85,27 @@ function playerSelection() {
             if (this.getAttribute("data-type") === "rock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/rock.jpg" alt="icon for rock">
                 <figcaption>Ready to rock them?</figcaption>
-                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
+                <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "rock";
             } else if (this.getAttribute("data-type") === "paper-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/paper.jpg" alt="icon for paper">
                 <figcaption>Ready to wrap this up?</figcaption>
-                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
+                <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "paper";
             } else if (this.getAttribute("data-type") === "scissors-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/scissors.jpg" alt="icon for scissors">
                 <figcaption>Will you make the cut?</figcaption>
-                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
+                <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "scissors";
             } else if (this.getAttribute("data-type") === "lizard-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/lizard.jpg" alt="icon for lizard">
                 <figcaption>Ready to gecko-ing?</figcaption>
-                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
+                <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "lizard";
             } else if (this.getAttribute("data-type") === "spock-selector") {
                 playerSelected.innerHTML = `<img src="assets/images/spock.jpg" alt="icon for Spock">
                 <figcaption>Ready to Trek out?</figcaption>
-                <button tabindex="0" id="player-confirm">Confirm choice</button>`;
+                <button id="player-confirm">Confirm choice</button>`;
                 playerPick = "spock";
             }
             playerSelected.setAttribute("data-type", playerPick);
@@ -433,9 +421,9 @@ function highScore() {
         document.getElementById("game-over-window").innerHTML = `<h2>You scored: ${endScore}</h2>
         <h3>New High Score!</h3>
         <label>Enter Name</label>
-        <input tabindex="0" type="text" name="new-score-name" maxlength="4" id="new-score-name">
-        <button tabindex="0" class="game-over-button" id="submit-score">Submit</button>
-        <button tabindex="0" style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
+        <input type="text" name="new-score-name" maxlength="4" id="new-score-name">
+        <button class="game-over-button" id="submit-score">Submit</button>
+        <button style="display: none;" class="game-over-button" id="new-game">Play again?</button>`;
 
         document.getElementById("submit-score").addEventListener("click", function () {
             updateScore();
