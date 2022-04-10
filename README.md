@@ -1,5 +1,18 @@
 # RPSLS-Game
 
+[Go to Features](#existing-features)
+- [Go to Menu Bar](#menu-and-pop-out-windows)
+- [Go to Game Area](#game-area)
+
+[Go to Features Left to Implement](#features-left-to-implement)
+
+[Go to Testing](#testing)
+- [Go to Validator Testing](#validator-testing)
+
+[Go to Deployment](#deployment)
+
+[Go to Credits](#credits)
+
 RPSLS (or rock, paper, scissors, lizard, Spock) is a simple and enjoyable game where the user can compete against a computer opponent in a game of chance. 
 
 This site features an adapative layout based on the user's screen size, 2 different game modes which both use a '3 lives' system and a high scores system which the player can set out to achieve and gain bragging rights over their friends!
@@ -87,7 +100,7 @@ This site features an adapative layout based on the user's screen size, 2 differ
 
 ## Testing
 
-This site has been tested on a large screen desktop device, laptop and mobile device with no evident errors appearing for visual or functional purposes. 
+This site has an adaptive layout based on screen sizes down to a minimum of 320px wide and has been tested on a large screen desktop device, laptop and mobile device with no evident errors appearing for visual or functional purposes. 
 
 This site features multiple header buttons and a drop down menu that will change appearance when hovered or focused and either show or hide pop up windows based on the user's interaction. These have all been found to be fully functional at all tested screen sizes without any evident errors.
 
@@ -131,3 +144,5 @@ This site has additionally been tested through Chrome's inspection tools to iden
  ### Media
 
  - Game icons provided by [Icon Library](https://icon-library.com/)
+
+ [Go to Top](#rpsls-game)

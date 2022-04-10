@@ -92,24 +92,6 @@ window.addEventListener("click", function dropDowns(event) {
     }
 });
 
-/** resets the game area and global variables */
-function newGame() {
-    document.getElementById("game-over-window").style.display = "none";
-    document.getElementById("game-area").style.display = "block";
-    document.getElementById("game-name").style.display = "block";
-
-    let livesBox = document.getElementsByClassName("lives-box");
-    for (let i = 0; i < livesBox.length; i++) {
-        livesBox[i].style.backgroundColor = "#edebeb";
-
-        document.getElementById("score").innerText = 0;
-        losses = 0;
-    }
-
-    roundReset();
-
-}
-
 /**changes player choice to selected option and creates confirm button */
 function playerSelection() {
 
@@ -440,6 +422,22 @@ function gameOver() {
     });
 }
 
+/** resets the game area and global variables */
+function newGame() {
+    document.getElementById("game-over-window").style.display = "none";
+    document.getElementById("game-area").style.display = "block";
+    document.getElementById("game-name").style.display = "block";
+
+    let livesBox = document.getElementsByClassName("lives-box");
+    for (let i = 0; i < livesBox.length; i++) {
+        livesBox[i].style.backgroundColor = "#edebeb";
+
+        document.getElementById("score").innerText = 0;
+        losses = 0;
+    }
+    roundReset();
+}
+
 /** verifies if high score acheived, updates high score and allows name input */
 function highScore() {
 
@@ -449,11 +447,6 @@ function highScore() {
     var rpslsSecondScore = document.getElementById("rpsls-score-table").rows[1].cells[2].innerText;
     var rpslsThirdScore = document.getElementById("rpsls-score-table").rows[2].cells[2].innerText;
     var rpslsHighScores = [parseInt(rpslsFirstScore), parseInt(rpslsSecondScore), parseInt(rpslsThirdScore)].reverse();
-
-    var rpslsFirstName = document.getElementById("rpsls-score-table").rows[0].cells[1].innerText;
-    var rpslsSecondName = document.getElementById("rpsls-score-table").rows[1].cells[1].innerText;
-    var rpslsThirdName = document.getElementById("rpsls-score-table").rows[2].cells[1].innerText;
-    let rpslsScoreNames = [rpslsFirstName, rpslsSecondName, rpslsThirdName].reverse();
 
     // checks if high score has been achieved
     if (endScore > rpslsHighScores[0]) {
