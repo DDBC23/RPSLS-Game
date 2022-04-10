@@ -511,7 +511,6 @@ input {
     }
 
     #game-countdown {
-        margin-top: 0;
         margin-top: 6rem;
         padding: 0;
         font-size: 3rem;
@@ -653,6 +652,8 @@ input {
     }
 
     #selections {
+        position: absolute;
+        left: 5rem;
         width: 6rem;
         margin: 1rem 0 0 1rem;
         font-size: 1rem;
@@ -681,14 +682,15 @@ input {
     }
 
     #game-countdown {
+        margin-top: 4rem;
         font-size: 1.75rem;
         padding-top: 1.5rem;
     }
 
     .scores-and-lives {
-        float: none;
+        float: right;
         font-size: 1.25rem;
-        margin: 12.5rem 0 0;
+        margin: 11.5rem 0 0;
     }
 
     .lives-box {
@@ -704,6 +706,6 @@ input {
     }
 
     #computer-selection {
-        margin-top: 1.5rem;
+        margin-top: 3.5rem;
     }
 }
