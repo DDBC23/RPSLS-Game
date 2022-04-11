@@ -130,7 +130,7 @@ This site has additionally been tested through Chrome's inspection tools to iden
 ### Unfixed Bugs
 
 - Cannot display rules window or high scores while game over window is active without showing multiple windows.
-- If game mode is changed during countdown then display changes but countdown proceeds.
+- If game mode is changed during countdown then display changes but countdown proceeds (does not produce console error).
 
 ## Deployment
 

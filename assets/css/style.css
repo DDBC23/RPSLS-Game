@@ -459,6 +459,7 @@ input {
     }
 
     #game-area {
+        height: 45rem;
         border: 0.75rem ridge #3a3a3a;
     }
 
