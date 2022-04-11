@@ -654,12 +654,24 @@ input {
     }
 
     .rpsls-selector {
-        margin: 0.75rem 0.25rem;
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: center;
+        height: 3rem;
+        margin: 1rem 0 1rem 1rem;
     }
 
     .rpsls-selector img {
         height: 2.5rem;
         width: 2.5rem;
+    }
+
+    #scissors-selector {
+        margin-left: 0.5rem;
+    }
+
+    #scissors-selector img {
+        padding-left: 0.5rem;
     }
 
     .rpsls-selector {
